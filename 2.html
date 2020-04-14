@@ -1,0 +1,188 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style>
+      h2, h3, h4 {
+        font-family: 'Roboto', sans-serif;
+      }
+      .post-box {
+        background-color: #FF8A65;
+        border: 2px solid #E64A19;
+        border-radius: 10px;
+        padding: 5px
+      }
+      hr.divider{
+        border-top: 1px solid #F0F0F0;
+      }
+      code {
+        border-radius: 5px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="title mt-5">LOGIN</h2>
+
+      <p class="lead text-secondary">
+        /functional/user/signin   <span class="badge badge-danger">POST</span>
+      </p>
+
+      <p>
+      This API is used to login a user. It returns a session identifier that is supposed to be used for further authorized API calls.
+      </p>
+      <hr class="divider">
+
+      <h3 class="title mt-2">Request Syntax</h3>
+      <pre>
+        <code class="json">
+    {
+  &quot;json&quot;: {
+    &quot;request&quot;: {
+      &quot;data&quot;: {
+        &quot;email&quot;: &quot;String&quot;,
+        &quot;password&quot;: &quot;String&quot;
+      }
+    }
+  }
+}
+        </code>
+      </pre>
+      <table class="table table-striped">
+        
+        <tr>
+          <td><b>email</b></td>
+          <td>User&#x27;s email</td>
+          <td><i>mandatory</i></td>
+        </tr>
+        
+        <tr>
+          <td><b>password</b></td>
+          <td>User&#x27;s password</td>
+          <td><i>mandatory</i></td>
+        </tr>
+        
+      </table>
+
+      <h3 class="title mt-4">Response Syntax</h3>
+      <pre>
+        <code class="json">
+    {
+    &quot;json&quot;: {
+        &quot;response&quot;: {
+            &quot;data&quot;: {
+                &quot;userDetails&quot;: {
+                    &quot;userId&quot;: 12,
+                    &quot;email&quot;: &quot;pranav.tiwari@toptal.com&quot;,
+                    &quot;firstName&quot;: &quot;Pranav2&quot;,
+                    &quot;lastName&quot;: &quot;Tiwari&quot;,
+                    &quot;mobile&quot;: &quot;91.7738260941&quot;,
+                    &quot;organizationAdmin&quot;: true,
+                    &quot;organizationId&quot;: 6,
+                    &quot;domain&quot;: &quot;TOPTAL.COM&quot;,
+                    &quot;emailValidated&quot;: true,
+                    &quot;createdTime&quot;: &quot;2020-04-10 11:00:39.0&quot;,
+                    &quot;firstLogin&quot;: true
+                }
+            },
+            &quot;session&quot;: {
+                &quot;sessionId&quot;: &quot;CGZAADAAAAAA&quot;
+            },
+            &quot;statusCode&quot;: &quot;0&quot;,
+            &quot;statusMessage&quot;: &quot;Success&quot;
+        }
+    }
+}
+        </code>
+      </pre>
+      <table class="table table-striped">
+        
+        <tr>
+          <td><b>userID</b></td>
+          <td>unique id for the user</td>
+        </tr>
+        
+        <tr>
+          <td><b>email</b></td>
+          <td>user&#x27;s email</td>
+        </tr>
+        
+        <tr>
+          <td><b>firstName</b></td>
+          <td>user&#x27;s first name</td>
+        </tr>
+        
+        <tr>
+          <td><b>lastName</b></td>
+          <td>user&#x27;s last name</td>
+        </tr>
+        
+        <tr>
+          <td><b>mobile</b></td>
+          <td>user&#x27;s mobile</td>
+        </tr>
+        
+        <tr>
+          <td><b>organizationAdmin</b></td>
+          <td>boolean representing if the user is an admin</td>
+        </tr>
+        
+        <tr>
+          <td><b>organizationId</b></td>
+          <td>unique Id of the organization that the user is a part of</td>
+        </tr>
+        
+        <tr>
+          <td><b>domain</b></td>
+          <td>email domain of the user</td>
+        </tr>
+        
+        <tr>
+          <td><b>emailValidated</b></td>
+          <td>boolean representing if the user&#x27;s email has been validated</td>
+        </tr>
+        
+        <tr>
+          <td><b>createdTime</b></td>
+          <td>timestamp when the user was registered.</td>
+        </tr>
+        
+        <tr>
+          <td><b>firstLogin</b></td>
+          <td>boolean representing if the user is logging in for the first time</td>
+        </tr>
+        
+      </table>
+      <h3 class="title mt-4 mb-4">Error Codes</h3>
+      <table class="table table-striped mt-2">
+        <tr>
+          <th>Status Code</th>
+          <th>Description</th>
+        </tr>
+        
+        <tr>
+          <td>0</td>
+          <td>Success</td>
+        </tr>
+        
+        <tr>
+          <td>1009</td>
+          <td>Email is not registered yet.</td>
+        </tr>
+        
+        <tr>
+          <td>1010</td>
+          <td>Password is incorrect</td>
+        </tr>
+        
+      </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

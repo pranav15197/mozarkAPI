@@ -1,0 +1,148 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style>
+      h2, h3, h4 {
+        font-family: 'Roboto', sans-serif;
+      }
+      .post-box {
+        background-color: #FF8A65;
+        border: 2px solid #E64A19;
+        border-radius: 10px;
+        padding: 5px
+      }
+      hr.divider{
+        border-top: 1px solid #F0F0F0;
+      }
+      code {
+        border-radius: 5px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="title mt-5">SIGN UP</h2>
+
+      <p class="lead text-secondary">
+        /functional/user/signup/   <span class="badge badge-danger">POST</span>
+      </p>
+
+      <p>
+      This API is used to register a new user. A verification code will be sent to the registered user email id.
+      </p>
+      <hr class="divider">
+
+      <h3 class="title mt-2">Request Syntax</h3>
+      <pre>
+        <code class="json">
+    {
+      &quot;json&quot;: {
+        &quot;request&quot;: {
+          &quot;data&quot;: {
+            &quot;firstName&quot;: &quot;String&quot;,
+            &quot;lastName&quot;: &quot;String&quot;,
+            &quot;email&quot;: &quot;String&quot;,
+            &quot;password&quot;: &quot;String&quot;,
+            &quot;confirmPassword&quot;: &quot;String&quot;,
+            &quot;mobile&quot;: &quot;String&quot;,
+            &quot;countryCode&quot;: &quot;String&quot;
+          }
+        }
+      }
+    }
+        </code>
+      </pre>
+      <table class="table table-striped">
+        
+        <tr>
+          <td><b>firstName</b></td>
+          <td>The first name of the user</td>
+          <td><i>mandatory</i></td>
+        </tr>
+        
+        <tr>
+          <td><b>lastName</b></td>
+          <td>The last name of the user</td>
+          <td><i>mandatory</i></td>
+        </tr>
+        
+        <tr>
+          <td><b>email</b></td>
+          <td>User&#x27;s email. This must be a work email</td>
+          <td><i>mandatory</i></td>
+        </tr>
+        
+        <tr>
+          <td><b>password</b></td>
+          <td>User&#x27;s password. Must be &gt;8 characters</td>
+          <td><i>mandatory</i></td>
+        </tr>
+        
+        <tr>
+          <td><b>confirmPassword</b></td>
+          <td>User&#x27;s password entered again for confirmation</td>
+          <td><i>mandatory</i></td>
+        </tr>
+        
+      </table>
+
+      <h3 class="title mt-4">Response Syntax</h3>
+      <pre>
+        <code class="json">
+    {
+      &quot;json&quot;: {
+        &quot;response&quot;: {
+          &quot;statusCode&quot;: &quot;0&quot;,
+          &quot;statusMessage&quot;: &quot;Success&quot;
+        }
+      }
+    }
+        </code>
+      </pre>
+      <table class="table table-striped">
+        
+        <tr>
+          <td><b>statusCode</b></td>
+          <td>Error code. 0 in case of no error.</td>
+        </tr>
+        
+        <tr>
+          <td><b>statusMessage</b></td>
+          <td>Error or Success message</td>
+        </tr>
+        
+      </table>
+      <h3 class="title mt-4 mb-4">Error Codes</h3>
+      <table class="table table-striped mt-2">
+        <tr>
+          <th>Status Code</th>
+          <th>Description</th>
+        </tr>
+        
+        <tr>
+          <td>1003</td>
+          <td>Password doesn&#x27;t match all constraints</td>
+        </tr>
+        
+        <tr>
+          <td>1004</td>
+          <td>Password and confirm passwords don&#x27;t match</td>
+        </tr>
+        
+        <tr>
+          <td>1006</td>
+          <td>Password doesn&#x27;t match all constraints</td>
+        </tr>
+        
+      </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
