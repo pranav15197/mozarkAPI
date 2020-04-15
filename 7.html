@@ -1,0 +1,163 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style>
+      h2, h3, h4 {
+        font-family: 'Roboto', sans-serif;
+      }
+      .post-box {
+        background-color: #FF8A65;
+        border: 2px solid #E64A19;
+        border-radius: 10px;
+        padding: 5px
+      }
+      hr.divider{
+        border-top: 1px solid #F0F0F0;
+      }
+      code {
+        border-radius: 5px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="title mt-5">LIST DEVICES</h2>
+
+      <p class="lead text-secondary">
+        /functional/devicegroup   <span class="badge badge-danger">POST</span>
+      </p>
+
+      <p>
+      List the devices available for testing. This list can be filtered based on model, manufacturer, os or the version of the device
+      </p>
+      <hr class="divider">
+
+      <h3 class="title mt-2">Request Syntax</h3>
+      <pre>
+        <code class="json">
+    {
+  &quot;json&quot;: {
+    &quot;request&quot;: {
+      &quot;session&quot;: {
+      	&quot;sessionId&quot;: &quot;String&quot;
+      },
+      &quot;data&quot;: {
+      	&quot;os&quot;: &quot;String&quot;,
+      	&quot;manufacturer&quot;: &quot;String&quot;,
+      	&quot;version&quot;: &quot;String&quot;
+      }
+    }
+  }
+}
+        </code>
+      </pre>
+      <table class="table table-striped">
+        
+        <tr>
+          <td><b>sessionId</b></td>
+          <td>Session Identifier</td>
+          <td><i>mandatory</i></td>
+        </tr>
+        
+        <tr>
+          <td><b>os</b></td>
+          <td>Field to be used to filter the devices based on the OS. Examples -  ANDROID,  IOS</td>
+          <td><i>optional</i></td>
+        </tr>
+        
+        <tr>
+          <td><b>manufacturer</b></td>
+          <td>Field to be used to filter the devices based on the manufacturer. Examples - apple,  samsung</td>
+          <td><i>optional</i></td>
+        </tr>
+        
+        <tr>
+          <td><b>version</b></td>
+          <td>Field to be used to filter the devices based on the version.</td>
+          <td><i>optional</i></td>
+        </tr>
+        
+      </table>
+
+      <h3 class="title mt-4">Response Syntax</h3>
+      <pre>
+        <code class="json">
+    {
+    &quot;json&quot;: {
+        &quot;response&quot;: {
+            &quot;data&quot;: {
+                &quot;count&quot;: 2,
+                &quot;list&quot;: [
+                    {
+                        &quot;id&quot;: &quot;arn:aws:devicefarm:us-west-2::device:1F53A837E7514BBE9EA0466BC21F2FA6&quot;,
+                        &quot;manufacturer&quot;: &quot;Apple&quot;,
+                        &quot;model&quot;: &quot;Apple iPad 7th Gen (2019) - MW742LL/A&quot;,
+                        &quot;os&quot;: &quot;IOS&quot;,
+                        &quot;version&quot;: &quot;13.3&quot;,
+                        &quot;city&quot;: &quot;Aws&quot;,
+                        &quot;operator&quot;: &quot;WIFI&quot;,
+                        &quot;status&quot;: &quot;HIGHLY_AVAILABLE&quot;,
+                        &quot;automation&quot;: true,
+                        &quot;manual&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;arn:aws:devicefarm:us-west-2::device:A9AD8EC023394AC2BFC5148593BD6883&quot;,
+                        &quot;manufacturer&quot;: &quot;Apple&quot;,
+                        &quot;model&quot;: &quot;Apple iPhone 11 - MWL72LL/A&quot;,
+                        &quot;os&quot;: &quot;IOS&quot;,
+                        &quot;version&quot;: &quot;13.3.1&quot;,
+                        &quot;city&quot;: &quot;Aws&quot;,
+                        &quot;operator&quot;: &quot;WIFI&quot;,
+                        &quot;status&quot;: &quot;HIGHLY_AVAILABLE&quot;,
+                        &quot;automation&quot;: true,
+                        &quot;manual&quot;: false
+                    }
+                ]
+            },
+            &quot;session&quot;: {
+                &quot;sessionId&quot;: &quot;YGAAADAAAAAA&quot;
+            },
+            &quot;statusCode&quot;: &quot;0&quot;,
+            &quot;statusMessage&quot;: &quot;Success&quot;
+        }
+    }
+}
+        </code>
+      </pre>
+      <table class="table table-striped">
+        
+        <tr>
+          <td><b>count</b></td>
+          <td>Total number of devices</td>
+        </tr>
+        
+        <tr>
+          <td><b>list</b></td>
+          <td>List of devices.</td>
+        </tr>
+        
+      </table>
+      <h3 class="title mt-4 mb-4">Error Codes</h3>
+      <table class="table table-striped mt-2">
+        <tr>
+          <th>Status Code</th>
+          <th>Description</th>
+        </tr>
+        
+        <tr>
+          <td>1005</td>
+          <td>No device found for the provided filters</td>
+        </tr>
+        
+      </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
