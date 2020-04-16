@@ -1,0 +1,139 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style>
+      h2, h3, h4 {
+        font-family: 'Roboto', sans-serif;
+      }
+      .post-box {
+        background-color: #FF8A65;
+        border: 2px solid #E64A19;
+        border-radius: 10px;
+        padding: 5px
+      }
+      hr.divider{
+        border-top: 1px solid #F0F0F0;
+      }
+      code {
+        border-radius: 5px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="title mt-5">LIST APPS</h2>
+
+      <p class="lead text-secondary">
+        /functional/app   <span class="badge badge-danger">POST</span>
+      </p>
+
+      <p>
+      List down all Apps for a given project
+      </p>
+      <hr class="divider">
+
+      <h3 class="title mt-2">Request Syntax</h3>
+      <pre>
+        <code class="json">
+    {
+  &quot;json&quot;: {
+    &quot;request&quot;: {
+      &quot;session&quot;: {
+      	&quot;sessionId&quot;: &quot;String&quot;
+      },
+      &quot;data&quot;: {
+      	&quot;projectId&quot;: Integer,
+      	&quot;disabled&quot;: Boolean
+      }
+    }
+  }
+}
+        </code>
+      </pre>
+      <table class="table table-striped">
+        
+        <tr>
+          <td><b>sessionId</b></td>
+          <td>Session Identifier</td>
+          <td><i>mandatory</i></td>
+        </tr>
+        
+        <tr>
+          <td><b>projectId</b></td>
+          <td>ID of the project for which apps are requested</td>
+          <td><i>mandatory</i></td>
+        </tr>
+        
+        <tr>
+          <td><b>disabled</b></td>
+          <td>If this is set to true, only apps which are not disabled will be returned</td>
+          <td><i>optional</i></td>
+        </tr>
+        
+      </table>
+
+      <h3 class="title mt-4">Response Syntax</h3>
+      <pre>
+        <code class="json">
+    {
+    &quot;json&quot;: {
+        &quot;response&quot;: {
+            &quot;data&quot;: {
+                &quot;count&quot;: 1,
+                &quot;list&quot;: [
+                    {
+                        &quot;id&quot;: 2,
+                        &quot;name&quot;: &quot;app-debug.apk&quot;,
+                        &quot;createdTime&quot;: &quot;2020-04-16 08:25:03&quot;,
+                        &quot;versionName&quot;: &quot;1.0&quot;,
+                        &quot;versionCode&quot;: &quot;1&quot;,
+                        &quot;minSdk&quot;: &quot;23&quot;,
+                        &quot;targetSdk&quot;: &quot;29&quot;,
+                        &quot;activity&quot;: &quot;com.example.ayulinkdemoprokect.ScanActivity&quot;,
+                        &quot;package&quot;: &quot;com.example.ayulinkdemoprokect&quot;,
+                        &quot;type&quot;: &quot;ANDROID_APP&quot;
+                    }
+                ]
+            },
+            &quot;session&quot;: {
+                &quot;sessionId&quot;: &quot;YGAAADAAAAAA&quot;
+            },
+            &quot;statusCode&quot;: &quot;0&quot;,
+            &quot;statusMessage&quot;: &quot;Success&quot;
+        }
+    }
+}
+        </code>
+      </pre>
+      <table class="table table-striped">
+        
+        <tr>
+          <td><b>count</b></td>
+          <td>Number of Apps</td>
+        </tr>
+        
+        <tr>
+          <td><b>list</b></td>
+          <td>List of Apps</td>
+        </tr>
+        
+      </table>
+      <h3 class="title mt-4 mb-4">Error Codes</h3>
+      <table class="table table-striped mt-2">
+        <tr>
+          <th>Status Code</th>
+          <th>Description</th>
+        </tr>
+        
+      </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
