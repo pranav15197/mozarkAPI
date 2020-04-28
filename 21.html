@@ -1,0 +1,402 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style rel="stylesheet">
+      body, html {
+        padding: 0px;
+        margin: 0px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+      }
+      h1 {
+        font-weight: 400;
+      }
+      p {
+        font-weight: 300;
+      }
+      .main {
+        background-color: #f2f3f3;
+        height: 100%;
+        width: 100%;
+      }
+      .top-nav {
+        height: 50px;
+        background-color: #161920;
+        width: 100%;
+      }
+      .breadcrumb {
+        height: 20px;
+        background-color: #232f3e;
+        width: 100%;
+      }
+      .sidebar {
+        background-color: #ffffff;
+        width: 300px;
+        float: left;
+        height: calc(100% - 70px);
+        border-right: 1px solid #c9cecf;
+      }
+      .content {
+        padding: 0 20px;
+        float: left;
+        width: calc(100% - 341px);
+        height: calc(100% - 70px);
+      }
+      .content-inner {
+        width: calc(100% - 80px);
+        padding: 0 40px;
+        height: 100%;
+        background-color: #ffffff;
+        overflow-y: scroll; 
+        border-right: 1px solid #c9cecf;
+        border-left: 1px solid #c9cecf;
+      }
+      .divider {
+        border-bottom: 1px solid #d5dbdb;
+        width: 100%;
+        height: 0px;
+        margin: 40px 0px;
+      }
+      .url {
+        color: #444;
+      }
+      .method {
+        background-color: #eb5f07;
+        border-radius: 2px;
+        padding: 4px 8px;
+        color: white;
+        margin-left: 4px;
+      }
+      .description {
+      }
+      .sub-header {
+        font-weight: 600;
+      }
+      .json {
+        border: 1px solid #aab7b8;
+        border-radius: 2px;
+      }
+      .param-title {
+        font-weight: 600;
+        color: #0073bb; 
+      }
+      .param-content {
+        padding-left: 40px;
+        margin-bottom: 15px;
+      }
+      .param-content div {
+        margin-top: 10px;
+      }
+      .footer {
+        height: 40px;
+        width: 100%;
+      }
+      .logo-image {
+        height: 50px;
+        float: left;
+      }
+      .company-name {
+        float: left;
+        color: white;
+        font-size: 25px;
+        font-weight: 600;
+      }
+      .api-list {
+        height: 100%;
+        overflow: scroll;
+      }
+      .api-link a {
+        text-decoration: none;
+      }
+      .api-link {
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid black;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="top-nav">
+        <image class="logo-image" src="https://i.ibb.co/BnjydHB/logo.png" />
+        <div class="company-name">
+          <div style="margin-top:10px; margin-left:10px">MOZARK API DOCUMENTATION</div>
+        </div>
+      </div>
+      <div class="breadcrumb">
+      </div>
+      <div class="container">
+        <div class="sidebar">
+          <div class="api-list">
+          
+          </div>
+        </div>
+        <div class="content">
+          <div class="content-inner">
+            <h1>Get Details for JIRA account</h1>
+            <p class="url">
+              /functional/jira/data/{{session_id}}   <span class="method">GET</span>
+            </p>
+
+            <p class="description">
+            This API returns the details (list of projects, users etc.) of the JIRA account that the user has linked with the platform. 
+Ther is no JSON body required for this API, the user&#x27;s session id is to be passed in the URL
+            </p>
+            <div class="divider"></div>
+
+            <h2 class="sub-header">Request Syntax</h2>
+            <pre>
+              <code class="json">-</code>
+            </pre>
+            <div class="divider"></div>
+
+            <h2 class="sub-header">Request Parameters</h2>
+            <p>The request accepts the following data in JSON format.</p>
+            
+            <div>
+              <div class="param-title">sessionId</div>
+              <div class="param-content">
+                <div class="param-description">Session Identifier</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div class="divider"></div>
+            <h2 class="sub-header">Response Syntax</h2>
+            <pre>
+              <code class="json">{
+    &quot;json&quot;: {
+        &quot;response&quot;: {
+            &quot;data&quot;: {
+                &quot;projects&quot;: [
+                    {
+                        &quot;id&quot;: &quot;10000&quot;,
+                        &quot;name&quot;: &quot;Project Rhine&quot;,
+                        &quot;key&quot;: &quot;MDC&quot;,
+                        &quot;versions&quot;: [
+                            {
+                                &quot;name&quot;: &quot;MVP&quot;,
+                                &quot;releaseDate&quot;: &quot;2019-08-16&quot;,
+                                &quot;description&quot;: &quot;MVP version of Mobile Device Cloud&quot;,
+                                &quot;startDate&quot;: &quot;2019-06-01&quot;
+                            },
+                            {
+                                &quot;name&quot;: &quot;V1&quot;,
+                                &quot;releaseDate&quot;: &quot;2019-09-20&quot;,
+                                &quot;description&quot;: &quot;Version 1 of mobile device cloud&quot;,
+                                &quot;startDate&quot;: &quot;2019-08-19&quot;
+                            },
+                            {
+                                &quot;name&quot;: &quot;V2&quot;,
+                                &quot;releaseDate&quot;: &quot;2019-10-31&quot;,
+                                &quot;description&quot;: &quot;Version 2 of the mobile device cloud&quot;,
+                                &quot;startDate&quot;: &quot;2019-10-21&quot;
+                            },
+                            {
+                                &quot;name&quot;: &quot;V3&quot;,
+                                &quot;releaseDate&quot;: &quot;2020-01-16&quot;,
+                                &quot;description&quot;: &quot;Revamped AQUAMARK - Backend + Agent&quot;,
+                                &quot;startDate&quot;: &quot;2019-12-19&quot;
+                            }
+                        ]
+                    }
+                ],
+                &quot;priorities&quot;: [
+                    {
+                        &quot;name&quot;: &quot;Highest&quot;,
+                        &quot;id&quot;: &quot;1&quot;,
+                        &quot;description&quot;: &quot;This problem will block progress.&quot;
+                    },
+                    {
+                        &quot;name&quot;: &quot;High&quot;,
+                        &quot;id&quot;: &quot;2&quot;,
+                        &quot;description&quot;: &quot;Serious problem that could block progress.&quot;
+                    },
+                    {
+                        &quot;name&quot;: &quot;Medium&quot;,
+                        &quot;id&quot;: &quot;3&quot;,
+                        &quot;description&quot;: &quot;Has the potential to affect progress.&quot;
+                    },
+                    {
+                        &quot;name&quot;: &quot;Low&quot;,
+                        &quot;id&quot;: &quot;4&quot;,
+                        &quot;description&quot;: &quot;Minor problem or easily worked around.&quot;
+                    },
+                    {
+                        &quot;name&quot;: &quot;Lowest&quot;,
+                        &quot;id&quot;: &quot;5&quot;,
+                        &quot;description&quot;: &quot;Trivial problem with little or no impact on progress.&quot;
+                    }
+                ],
+                &quot;users&quot;: [
+                    {
+                        &quot;id&quot;: &quot;557058:0867a421-a9ee-4659-801a-bc0ee4a4487e&quot;,
+                        &quot;name&quot;: &quot;Slack&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d3af9184fa5500c42b6de1f&quot;,
+                        &quot;name&quot;: &quot;sourabh.chowdhury&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d1219ab7420820c9de6795c&quot;,
+                        &quot;name&quot;: &quot;Julie Moncorger&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d1219ad28a0740c8e0b36e6&quot;,
+                        &quot;name&quot;: &quot;Thierry Moncorger&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;557058:214cdd6a-ff93-4d8b-838b-62dfcf1a2a71&quot;,
+                        &quot;name&quot;: &quot;Trello&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;557058:950f9f5b-3d6d-4e1d-954a-21367ae9ac75&quot;,
+                        &quot;name&quot;: &quot;Jira Service Desk Widget&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;557058:cbc04d7b-be84-46eb-90e4-e567aa5332c6&quot;,
+                        &quot;name&quot;: &quot;Confluence Analytics (System)&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;557058:d6b5955a-e193-41e1-b051-79cdb0755d68&quot;,
+                        &quot;name&quot;: &quot;Trello&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;557058:e305ff3e-30af-4572-9284-3ede5eee8842&quot;,
+                        &quot;name&quot;: &quot;Suthindran Guru Rao&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;557058:f58131cb-b67d-43c7-b30d-6b58d40bd077&quot;,
+                        &quot;name&quot;: &quot;Automation for Jira&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5ac5326a95d30150501e5ff4&quot;,
+                        &quot;name&quot;: &quot;Jira Cloud for Workplace&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5b07aa6d7909c01a96c92f04&quot;,
+                        &quot;name&quot;: &quot;veena G&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5b6c7b3afbc68529c6c47967&quot;,
+                        &quot;name&quot;: &quot;Statuspage for Jira&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5b70c8b80fd0ac05d389f5e9&quot;,
+                        &quot;name&quot;: &quot;Chat Notifications&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5bbd7c592995be2f0a42d77d&quot;,
+                        &quot;name&quot;: &quot;Jira Ops Confluence integration&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5cf112d31552030f1e3a5905&quot;,
+                        &quot;name&quot;: &quot;Jira Spreadsheets&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d12151dbd29be0c71b08ec8&quot;,
+                        &quot;name&quot;: &quot;Wajdi Ben Rabah&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d3b17ea30951f0c8bd6a411&quot;,
+                        &quot;name&quot;: &quot;suvarna&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d3b17eb30951f0c8bd6a412&quot;,
+                        &quot;name&quot;: &quot;Sumit Kumar Gupta&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d3b182a2d50070c21a3f8c2&quot;,
+                        &quot;name&quot;: &quot;swayam&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d3b184d30951f0c8bd6a417&quot;,
+                        &quot;name&quot;: &quot;Navneet Vibhu&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d3b18c17a115a0c402a563c&quot;,
+                        &quot;name&quot;: &quot;Jayasree&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d3eae090c3d830c304d28e6&quot;,
+                        &quot;name&quot;: &quot;Sourabh Chowdhury&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d3eb1acf14e7c0da5628a35&quot;,
+                        &quot;name&quot;: &quot;Chandrasekar Ramamoorthy&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d53f3cbc6b9320d9ea5bdc2&quot;,
+                        &quot;name&quot;: &quot;Jira Outlook&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d88600bc7d4e30dc282db9c&quot;,
+                        &quot;name&quot;: &quot;Krishna&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d9afe0010f4800c341a2bba&quot;,
+                        &quot;name&quot;: &quot;Opsgenie Incident Timeline&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5d9b2860cd50b80dcea8a5b7&quot;,
+                        &quot;name&quot;: &quot;Opsgenie Incident Timeline&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5daf44229703bc0c2d27b1c6&quot;,
+                        &quot;name&quot;: &quot;jsd-slack-integration&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5dd68a209fa2b00fbaa74f8f&quot;,
+                        &quot;name&quot;: &quot;Deepak Kumar&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5dd7ae49c7ac480ee5676d0a&quot;,
+                        &quot;name&quot;: &quot;Chandrasekar&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5dee0fe0ca98940cb900d912&quot;,
+                        &quot;name&quot;: &quot;Sheshnath yadav&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5df2214278099d0e55c4bd4d&quot;,
+                        &quot;name&quot;: &quot;vibhu&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5df8d579dcf2570cb381f2b4&quot;,
+                        &quot;name&quot;: &quot;punit&quot;
+                    },
+                    {
+                        &quot;id&quot;: &quot;5dfa0821caa2f70cb00eda31&quot;,
+                        &quot;name&quot;: &quot;Swayam&quot;
+                    }
+                ]
+            },
+            &quot;statusCode&quot;: &quot;0&quot;,
+            &quot;statusMessage&quot;: &quot;Success&quot;
+        }
+    }
+}</code>
+            </pre>
+            <div class="divider"></div>
+            <h2 class="sub-header">Response Elements</h2>
+            
+            <div>
+              <div class="param-title">projects</div>
+              <div class="param-content">
+                <div class="param-description">List of objects with details of projects for the JIRA account.</div>
+                <div class="param-required">Type: String</div>
+              </div>
+            </div>
+            
+            <div class="footer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

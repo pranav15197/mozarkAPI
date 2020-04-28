@@ -1,0 +1,317 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style rel="stylesheet">
+      body, html {
+        padding: 0px;
+        margin: 0px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+      }
+      h1 {
+        font-weight: 400;
+      }
+      p {
+        font-weight: 300;
+      }
+      .main {
+        background-color: #f2f3f3;
+        height: 100%;
+        width: 100%;
+      }
+      .top-nav {
+        height: 50px;
+        background-color: #161920;
+        width: 100%;
+      }
+      .breadcrumb {
+        height: 20px;
+        background-color: #232f3e;
+        width: 100%;
+      }
+      .sidebar {
+        background-color: #ffffff;
+        width: 300px;
+        float: left;
+        height: calc(100% - 70px);
+        border-right: 1px solid #c9cecf;
+      }
+      .content {
+        padding: 0 20px;
+        float: left;
+        width: calc(100% - 341px);
+        height: calc(100% - 70px);
+      }
+      .content-inner {
+        width: calc(100% - 80px);
+        padding: 0 40px;
+        height: 100%;
+        background-color: #ffffff;
+        overflow-y: scroll; 
+        border-right: 1px solid #c9cecf;
+        border-left: 1px solid #c9cecf;
+      }
+      .divider {
+        border-bottom: 1px solid #d5dbdb;
+        width: 100%;
+        height: 0px;
+        margin: 40px 0px;
+      }
+      .url {
+        color: #444;
+      }
+      .method {
+        background-color: #eb5f07;
+        border-radius: 2px;
+        padding: 4px 8px;
+        color: white;
+        margin-left: 4px;
+      }
+      .description {
+      }
+      .sub-header {
+        font-weight: 600;
+      }
+      .json {
+        border: 1px solid #aab7b8;
+        border-radius: 2px;
+      }
+      .param-title {
+        font-weight: 600;
+        color: #0073bb; 
+      }
+      .param-content {
+        padding-left: 40px;
+        margin-bottom: 15px;
+      }
+      .param-content div {
+        margin-top: 10px;
+      }
+      .footer {
+        height: 40px;
+        width: 100%;
+      }
+      .logo-image {
+        height: 50px;
+        float: left;
+      }
+      .company-name {
+        float: left;
+        color: white;
+        font-size: 25px;
+        font-weight: 600;
+      }
+      .api-list {
+        height: 100%;
+        overflow: scroll;
+      }
+      .api-link a {
+        text-decoration: none;
+      }
+      .api-link {
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid black;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="top-nav">
+        <image class="logo-image" src="https://i.ibb.co/BnjydHB/logo.png" />
+        <div class="company-name">
+          <div style="margin-top:10px; margin-left:10px">MOZARK API DOCUMENTATION</div>
+        </div>
+      </div>
+      <div class="breadcrumb">
+      </div>
+      <div class="container">
+        <div class="sidebar">
+          <div class="api-list">
+          
+          </div>
+        </div>
+        <div class="content">
+          <div class="content-inner">
+            <h1>List Jobs</h1>
+            <p class="url">
+              /functional/job/list   <span class="method">POST</span>
+            </p>
+
+            <p class="description">
+            List down the jobs started for a given tray ID, along with their status. One job corresponds to one device in the tray.
+            </p>
+            <div class="divider"></div>
+
+            <h2 class="sub-header">Request Syntax</h2>
+            <pre>
+              <code class="json">{
+  &quot;json&quot;: {
+    &quot;request&quot;: {
+      &quot;session&quot;: {
+      	&quot;sessionId&quot;: &quot;{{session_id}}&quot;
+      },
+      &quot;data&quot;: {
+      	&quot;trayId&quot;: 3
+      }
+    }
+  }
+}</code>
+            </pre>
+            <div class="divider"></div>
+
+            <h2 class="sub-header">Request Parameters</h2>
+            <p>The request accepts the following data in JSON format.</p>
+            
+            <div>
+              <div class="param-title">sessionId</div>
+              <div class="param-content">
+                <div class="param-description">Session Identifier</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">trayId</div>
+              <div class="param-content">
+                <div class="param-description">ID of the tray for which jobs re required</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div class="divider"></div>
+            <h2 class="sub-header">Response Syntax</h2>
+            <pre>
+              <code class="json">{
+    &quot;json&quot;: {
+        &quot;response&quot;: {
+            &quot;data&quot;: {
+                &quot;count&quot;: 3,
+                &quot;list&quot;: [
+                    {
+                        &quot;id&quot;: 11,
+                        &quot;title&quot;: &quot;Jobztop_Jobztop&quot;,
+                        &quot;status&quot;: &quot;Running&quot;,
+                        &quot;serial&quot;: &quot;aquamark_10&quot;,
+                        &quot;type&quot;: &quot;APPIUM_JAVA_TESTNG_TEST_PACKAGE&quot;,
+                        &quot;appVersion&quot;: &quot;v1.7.0&quot;,
+                        &quot;apkName&quot;: &quot;Jobztop.apk&quot;,
+                        &quot;appName&quot;: &quot;Jobztop&quot;,
+                        &quot;version&quot;: &quot;Android 8.0.0&quot;,
+                        &quot;duration&quot;: 0,
+                        &quot;createdTime&quot;: &quot;2020-04-23 05:12:23&quot;,
+                        &quot;startTime&quot;: &quot;2020-04-23 05:12:38&quot;,
+                        &quot;userDetails&quot;: {
+                            &quot;userId&quot;: 12,
+                            &quot;email&quot;: &quot;pranav.tiwari@toptal.com&quot;,
+                            &quot;firstName&quot;: &quot;Pranav2&quot;,
+                            &quot;lastName&quot;: &quot;Tiwari&quot;,
+                            &quot;mobile&quot;: &quot;91.7738260941&quot;,
+                            &quot;organizationAdmin&quot;: true,
+                            &quot;organizationId&quot;: 6,
+                            &quot;domain&quot;: &quot;TOPTAL.COM&quot;,
+                            &quot;emailValidated&quot;: true,
+                            &quot;createdTime&quot;: &quot;2020-04-10 11:00:39.0&quot;
+                        },
+                        &quot;videos&quot;: [],
+                        &quot;images&quot;: []
+                    },
+                    {
+                        &quot;id&quot;: 12,
+                        &quot;title&quot;: &quot;Jobztop_Jobztop&quot;,
+                        &quot;status&quot;: &quot;Running&quot;,
+                        &quot;serial&quot;: &quot;arn:aws:devicefarm:us-west-2::device:27C13766305549CF9FEBE66E2070C2A9&quot;,
+                        &quot;type&quot;: &quot;APPIUM_JAVA_TESTNG_TEST_PACKAGE&quot;,
+                        &quot;appVersion&quot;: &quot;v1.7.0&quot;,
+                        &quot;apkName&quot;: &quot;Jobztop.apk&quot;,
+                        &quot;appName&quot;: &quot;Jobztop&quot;,
+                        &quot;version&quot;: &quot;ANDROID 7.0&quot;,
+                        &quot;duration&quot;: 0,
+                        &quot;createdTime&quot;: &quot;2020-04-23 05:12:23&quot;,
+                        &quot;startTime&quot;: &quot;2020-04-23 05:12:38&quot;,
+                        &quot;userDetails&quot;: {
+                            &quot;userId&quot;: 12,
+                            &quot;email&quot;: &quot;pranav.tiwari@toptal.com&quot;,
+                            &quot;firstName&quot;: &quot;Pranav2&quot;,
+                            &quot;lastName&quot;: &quot;Tiwari&quot;,
+                            &quot;mobile&quot;: &quot;91.7738260941&quot;,
+                            &quot;organizationAdmin&quot;: true,
+                            &quot;organizationId&quot;: 6,
+                            &quot;domain&quot;: &quot;TOPTAL.COM&quot;,
+                            &quot;emailValidated&quot;: true,
+                            &quot;createdTime&quot;: &quot;2020-04-10 11:00:39.0&quot;
+                        },
+                        &quot;videos&quot;: [],
+                        &quot;images&quot;: []
+                    },
+                    {
+                        &quot;id&quot;: 13,
+                        &quot;title&quot;: &quot;Jobztop_Jobztop&quot;,
+                        &quot;status&quot;: &quot;Running&quot;,
+                        &quot;serial&quot;: &quot;arn:aws:devicefarm:us-west-2::device:9A1CD324234F452F806C3A758762B755&quot;,
+                        &quot;type&quot;: &quot;APPIUM_JAVA_TESTNG_TEST_PACKAGE&quot;,
+                        &quot;appVersion&quot;: &quot;v1.7.0&quot;,
+                        &quot;apkName&quot;: &quot;Jobztop.apk&quot;,
+                        &quot;appName&quot;: &quot;Jobztop&quot;,
+                        &quot;version&quot;: &quot;ANDROID 8.1.0&quot;,
+                        &quot;duration&quot;: 0,
+                        &quot;createdTime&quot;: &quot;2020-04-23 05:12:23&quot;,
+                        &quot;startTime&quot;: &quot;2020-04-23 05:12:38&quot;,
+                        &quot;userDetails&quot;: {
+                            &quot;userId&quot;: 12,
+                            &quot;email&quot;: &quot;pranav.tiwari@toptal.com&quot;,
+                            &quot;firstName&quot;: &quot;Pranav2&quot;,
+                            &quot;lastName&quot;: &quot;Tiwari&quot;,
+                            &quot;mobile&quot;: &quot;91.7738260941&quot;,
+                            &quot;organizationAdmin&quot;: true,
+                            &quot;organizationId&quot;: 6,
+                            &quot;domain&quot;: &quot;TOPTAL.COM&quot;,
+                            &quot;emailValidated&quot;: true,
+                            &quot;createdTime&quot;: &quot;2020-04-10 11:00:39.0&quot;
+                        },
+                        &quot;videos&quot;: [],
+                        &quot;images&quot;: []
+                    }
+                ]
+            },
+            &quot;session&quot;: {
+                &quot;sessionId&quot;: &quot;YGAAADAAAAAA&quot;
+            },
+            &quot;statusCode&quot;: &quot;0&quot;,
+            &quot;statusMessage&quot;: &quot;Success&quot;
+        }
+    }
+}</code>
+            </pre>
+            <div class="divider"></div>
+            <h2 class="sub-header">Response Elements</h2>
+            
+            <div>
+              <div class="param-title">count</div>
+              <div class="param-content">
+                <div class="param-description">Number of jobs for the tray</div>
+                <div class="param-required">Type: String</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">list</div>
+              <div class="param-content">
+                <div class="param-description">List of job objects</div>
+                <div class="param-required">Type: String</div>
+              </div>
+            </div>
+            
+            <div class="footer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

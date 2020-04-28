@@ -136,33 +136,47 @@
         </div>
         <div class="content">
           <div class="content-inner">
-            <h1>CREATE TRAY</h1>
+            <h1>Report A bug on JIRA</h1>
             <p class="url">
-              /functional/tray   <span class="method">POST</span>
+              /functional/jira/reportbug   <span class="method">POST</span>
             </p>
 
             <p class="description">
-            This API is used to create a tray or a collection of devices that would further be used for automated testing.
+            This API is used to raise a bug on JIRA
             </p>
             <div class="divider"></div>
 
             <h2 class="sub-header">Request Syntax</h2>
             <pre>
               <code class="json">{
-    &quot;json&quot;: {
-        &quot;request&quot;: {
-            &quot;session&quot;: {
-                &quot;sessionId&quot;: &quot;String&quot;
-            },
-            &quot;data&quot;: {
-                &quot;description&quot;: &quot;String&quot;,
-                &quot;list&quot;: [
-                   &quot;String&quot;,
-                   &quot;String&quot;
-                ]
-            }
-        }
+  &quot;json&quot;: {
+    &quot;request&quot;: {
+      &quot;session&quot;: {
+        &quot;sessionId&quot;: &quot;String&quot;
+      },
+      &quot;data&quot;: {
+        &quot;jobId&quot;: Integer,
+        &quot;testCase&quot;: &quot;String&quot;,
+        &quot;project&quot;: {
+          &quot;id&quot;: &quot;String&quot;,
+          &quot;name&quot;: &quot;String&quot;,
+          &quot;key&quot;: &quot;String&quot;
+        },
+        &quot;assignee&quot;: {
+          &quot;id&quot;: &quot;String&quot;,
+          &quot;name&quot;: &quot;String&quot;,
+        },
+        &quot;version&quot;: {
+          &quot;name&quot;: &quot;String&quot;,
+        },
+        &quot;priority&quot;: {
+          &quot;name&quot;: &quot;String&quot;,
+          &quot;id&quot;: &quot;String&quot;
+        },
+        &quot;description&quot;: &quot;String&quot;,
+      }
     }
+  }
 }</code>
             </pre>
             <div class="divider"></div>
@@ -171,18 +185,63 @@
             <p>The request accepts the following data in JSON format.</p>
             
             <div>
-              <div class="param-title">description</div>
+              <div class="param-title">sessionId</div>
               <div class="param-content">
-                <div class="param-description">Description for the tray</div>
+                <div class="param-description">Session Identifier</div>
                 <div class="param-required">Type: String</div>
                 <div class="param-required">Required: Yes</div>
               </div>
             </div>
             
             <div>
-              <div class="param-title">list</div>
+              <div class="param-title">jobId</div>
               <div class="param-content">
-                <div class="param-description">A list of strings, where each string represents a device id that needs to be included in the tray</div>
+                <div class="param-description">ID of the job for which the bug needs to be raised</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">testCase</div>
+              <div class="param-content">
+                <div class="param-description">Title of the test case</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">project</div>
+              <div class="param-content">
+                <div class="param-description">Details of the JIRA project</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">priority</div>
+              <div class="param-content">
+                <div class="param-description">Priority to be set on JIRA</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">version</div>
+              <div class="param-content">
+                <div class="param-description">Version of JIRA</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">assignee</div>
+              <div class="param-content">
+                <div class="param-description">JIRA user to be marked as assignee of the bug report</div>
                 <div class="param-required">Type: String</div>
                 <div class="param-required">Required: Yes</div>
               </div>
@@ -195,8 +254,8 @@
     &quot;json&quot;: {
         &quot;response&quot;: {
             &quot;data&quot;: {
-                &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;TOPTAL_3&quot;
+                &quot;id&quot;: &quot;10399&quot;,
+                &quot;key&quot;: &quot;MDC-359&quot;
             },
             &quot;session&quot;: {
                 &quot;sessionId&quot;: &quot;YGAAADAAAAAA&quot;
@@ -211,17 +270,9 @@
             <h2 class="sub-header">Response Elements</h2>
             
             <div>
-              <div class="param-title">id</div>
+              <div class="param-title">data</div>
               <div class="param-content">
-                <div class="param-description">id of the created tray</div>
-                <div class="param-required">Type: String</div>
-              </div>
-            </div>
-            
-            <div>
-              <div class="param-title">name</div>
-              <div class="param-content">
-                <div class="param-description">name of the created tray</div>
+                <div class="param-description">Information of the ticket created on JIRA</div>
                 <div class="param-required">Type: String</div>
               </div>
             </div>

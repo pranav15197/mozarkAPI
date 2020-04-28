@@ -1,0 +1,359 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style rel="stylesheet">
+      body, html {
+        padding: 0px;
+        margin: 0px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+      }
+      h1 {
+        font-weight: 400;
+      }
+      p {
+        font-weight: 300;
+      }
+      .main {
+        background-color: #f2f3f3;
+        height: 100%;
+        width: 100%;
+      }
+      .top-nav {
+        height: 50px;
+        background-color: #161920;
+        width: 100%;
+      }
+      .breadcrumb {
+        height: 20px;
+        background-color: #232f3e;
+        width: 100%;
+      }
+      .sidebar {
+        background-color: #ffffff;
+        width: 300px;
+        float: left;
+        height: calc(100% - 70px);
+        border-right: 1px solid #c9cecf;
+      }
+      .content {
+        padding: 0 20px;
+        float: left;
+        width: calc(100% - 341px);
+        height: calc(100% - 70px);
+      }
+      .content-inner {
+        width: calc(100% - 80px);
+        padding: 0 40px;
+        height: 100%;
+        background-color: #ffffff;
+        overflow-y: scroll; 
+        border-right: 1px solid #c9cecf;
+        border-left: 1px solid #c9cecf;
+      }
+      .divider {
+        border-bottom: 1px solid #d5dbdb;
+        width: 100%;
+        height: 0px;
+        margin: 40px 0px;
+      }
+      .url {
+        color: #444;
+      }
+      .method {
+        background-color: #eb5f07;
+        border-radius: 2px;
+        padding: 4px 8px;
+        color: white;
+        margin-left: 4px;
+      }
+      .description {
+      }
+      .sub-header {
+        font-weight: 600;
+      }
+      .json {
+        border: 1px solid #aab7b8;
+        border-radius: 2px;
+      }
+      .param-title {
+        font-weight: 600;
+        color: #0073bb; 
+      }
+      .param-content {
+        padding-left: 40px;
+        margin-bottom: 15px;
+      }
+      .param-content div {
+        margin-top: 10px;
+      }
+      .footer {
+        height: 40px;
+        width: 100%;
+      }
+      .logo-image {
+        height: 50px;
+        float: left;
+      }
+      .company-name {
+        float: left;
+        color: white;
+        font-size: 25px;
+        font-weight: 600;
+      }
+      .api-list {
+        height: 100%;
+        overflow: scroll;
+      }
+      .api-link a {
+        text-decoration: none;
+      }
+      .api-link {
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid black;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="top-nav">
+        <image class="logo-image" src="https://i.ibb.co/BnjydHB/logo.png" />
+        <div class="company-name">
+          <div style="margin-top:10px; margin-left:10px">MOZARK API DOCUMENTATION</div>
+        </div>
+      </div>
+      <div class="breadcrumb">
+      </div>
+      <div class="container">
+        <div class="sidebar">
+          <div class="api-list">
+          
+          </div>
+        </div>
+        <div class="content">
+          <div class="content-inner">
+            <h1>View Job Details</h1>
+            <p class="url">
+              /functional/job/details   <span class="method">POST</span>
+            </p>
+
+            <p class="description">
+            This API is used to get the details for a particular job. Each job corresponds to a test script running on 1 device for one build of the application. The details contain the status of each test case as well as screenshots of the devices taken during the tests. Please note that these results will be available only when the job is completed.
+            </p>
+            <div class="divider"></div>
+
+            <h2 class="sub-header">Request Syntax</h2>
+            <pre>
+              <code class="json">{
+  &quot;json&quot;: {
+    &quot;request&quot;: {
+      &quot;session&quot;: {
+        &quot;sessionId&quot;: &quot;String&quot;
+      },
+      &quot;data&quot;: {
+        &quot;jobId&quot;: Integer
+      }
+    }
+  }
+}</code>
+            </pre>
+            <div class="divider"></div>
+
+            <h2 class="sub-header">Request Parameters</h2>
+            <p>The request accepts the following data in JSON format.</p>
+            
+            <div>
+              <div class="param-title">sessionId</div>
+              <div class="param-content">
+                <div class="param-description">Session Identifier</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">jobId</div>
+              <div class="param-content">
+                <div class="param-description">ID of the job</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div class="divider"></div>
+            <h2 class="sub-header">Response Syntax</h2>
+            <pre>
+              <code class="json">{
+    &quot;json&quot;: {
+        &quot;response&quot;: {
+            &quot;data&quot;: {
+                &quot;testCases&quot;: [
+                    {
+                        &quot;testCase&quot;: &quot;Click on Login Text&quot;,
+                        &quot;result&quot;: &quot;PASSED&quot;,
+                        &quot;subTestCases&quot;: [
+                            {
+                                &quot;subTestCase&quot;: &quot;Before Click on Login&quot;,
+                                &quot;result&quot;: &quot;PASSED&quot;,
+                                &quot;images&quot;: [
+                                    &quot;http://104.211.190.215:8080/functional/getphoto?id=76&quot;
+                                ]
+                            },
+                            {
+                                &quot;subTestCase&quot;: &quot;After Click on Login&quot;,
+                                &quot;result&quot;: &quot;PASSED&quot;,
+                                &quot;images&quot;: [
+                                    &quot;http://104.211.190.215:8080/functional/getphoto?id=75&quot;
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        &quot;testCase&quot;: &quot;Click on Register Text&quot;,
+                        &quot;result&quot;: &quot;PASSED&quot;,
+                        &quot;subTestCases&quot;: [
+                            {
+                                &quot;subTestCase&quot;: &quot;Before Click on Register&quot;,
+                                &quot;result&quot;: &quot;PASSED&quot;,
+                                &quot;images&quot;: [
+                                    &quot;http://104.211.190.215:8080/functional/getphoto?id=80&quot;
+                                ]
+                            },
+                            {
+                                &quot;subTestCase&quot;: &quot;After Click on Register&quot;,
+                                &quot;result&quot;: &quot;PASSED&quot;,
+                                &quot;images&quot;: [
+                                    &quot;http://104.211.190.215:8080/functional/getphoto?id=79&quot;
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        &quot;testCase&quot;: &quot;Click on Search Text&quot;,
+                        &quot;result&quot;: &quot;PASSED&quot;,
+                        &quot;subTestCases&quot;: [
+                            {
+                                &quot;subTestCase&quot;: &quot;Before Click on Search&quot;,
+                                &quot;result&quot;: &quot;PASSED&quot;,
+                                &quot;images&quot;: [
+                                    &quot;http://104.211.190.215:8080/functional/getphoto?id=84&quot;
+                                ]
+                            },
+                            {
+                                &quot;subTestCase&quot;: &quot;After Click on Search&quot;,
+                                &quot;result&quot;: &quot;PASSED&quot;,
+                                &quot;images&quot;: [
+                                    &quot;http://104.211.190.215:8080/functional/getphoto?id=83&quot;
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        &quot;testCase&quot;: &quot;Click on Search Result&quot;,
+                        &quot;result&quot;: &quot;PASSED&quot;,
+                        &quot;subTestCases&quot;: [
+                            {
+                                &quot;subTestCase&quot;: &quot;Before Click on Search_Result&quot;,
+                                &quot;result&quot;: &quot;PASSED&quot;,
+                                &quot;images&quot;: [
+                                    &quot;http://104.211.190.215:8080/functional/getphoto?id=82&quot;
+                                ]
+                            },
+                            {
+                                &quot;subTestCase&quot;: &quot;After Click on Search_Result&quot;,
+                                &quot;result&quot;: &quot;PASSED&quot;,
+                                &quot;images&quot;: [
+                                    &quot;http://104.211.190.215:8080/functional/getphoto?id=81&quot;
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        &quot;testCase&quot;: &quot;Click on Apply Text&quot;,
+                        &quot;result&quot;: &quot;PASSED&quot;,
+                        &quot;subTestCases&quot;: [
+                            {
+                                &quot;subTestCase&quot;: &quot;Before Click on Apply&quot;,
+                                &quot;result&quot;: &quot;PASSED&quot;,
+                                &quot;images&quot;: [
+                                    &quot;http://104.211.190.215:8080/functional/getphoto?id=74&quot;
+                                ]
+                            },
+                            {
+                                &quot;subTestCase&quot;: &quot;After Click on Apply&quot;,
+                                &quot;result&quot;: &quot;PASSED&quot;,
+                                &quot;images&quot;: [
+                                    &quot;http://104.211.190.215:8080/functional/getphoto?id=73&quot;
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        &quot;testCase&quot;: &quot;Click on Ok Text&quot;,
+                        &quot;result&quot;: &quot;PASSED&quot;,
+                        &quot;subTestCases&quot;: [
+                            {
+                                &quot;subTestCase&quot;: &quot;Before Click on Ok&quot;,
+                                &quot;result&quot;: &quot;PASSED&quot;,
+                                &quot;images&quot;: [
+                                    &quot;http://104.211.190.215:8080/functional/getphoto?id=78&quot;
+                                ]
+                            },
+                            {
+                                &quot;subTestCase&quot;: &quot;After Click on Ok&quot;,
+                                &quot;result&quot;: &quot;PASSED&quot;,
+                                &quot;images&quot;: [
+                                    &quot;http://104.211.190.215:8080/functional/getphoto?id=77&quot;
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                &quot;aggregation&quot;: {
+                    &quot;numberOfCases&quot;: &quot;6&quot;,
+                    &quot;successCount&quot;: &quot;6&quot;,
+                    &quot;failureCount&quot;: &quot;0&quot;,
+                    &quot;successPercent&quot;: &quot;100.0&quot;,
+                    &quot;failurePercent&quot;: &quot;0.0&quot;
+                }
+            },
+            &quot;session&quot;: {
+                &quot;sessionId&quot;: &quot;YGAAADAAAAAA&quot;
+            },
+            &quot;statusCode&quot;: &quot;0&quot;,
+            &quot;statusMessage&quot;: &quot;Success&quot;
+        }
+    }
+}</code>
+            </pre>
+            <div class="divider"></div>
+            <h2 class="sub-header">Response Elements</h2>
+            
+            <div>
+              <div class="param-title">testCases</div>
+              <div class="param-content">
+                <div class="param-description">List of objects with details of each Test Case</div>
+                <div class="param-required">Type: String</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">aggregation</div>
+              <div class="param-content">
+                <div class="param-description">Summarised Results for this job</div>
+                <div class="param-required">Type: String</div>
+              </div>
+            </div>
+            
+            <div class="footer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

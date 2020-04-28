@@ -136,13 +136,13 @@
         </div>
         <div class="content">
           <div class="content-inner">
-            <h1>CREATE TRAY</h1>
+            <h1>Configure JIRA</h1>
             <p class="url">
-              /functional/tray   <span class="method">POST</span>
+              /functional/jira/configure   <span class="method">PUT</span>
             </p>
 
             <p class="description">
-            This API is used to create a tray or a collection of devices that would further be used for automated testing.
+            This API is used to configure the user&#x27;s JIRA account with the platform so that bugs can be raised against the test cases.
             </p>
             <div class="divider"></div>
 
@@ -155,11 +155,9 @@
                 &quot;sessionId&quot;: &quot;String&quot;
             },
             &quot;data&quot;: {
-                &quot;description&quot;: &quot;String&quot;,
-                &quot;list&quot;: [
-                   &quot;String&quot;,
-                   &quot;String&quot;
-                ]
+                &quot;email&quot;: &quot;String&quot;,
+                &quot;token&quot;: &quot;String&quot;,
+                &quot;url&quot;: &quot;String&quot;
             }
         }
     }
@@ -171,18 +169,27 @@
             <p>The request accepts the following data in JSON format.</p>
             
             <div>
-              <div class="param-title">description</div>
+              <div class="param-title">email</div>
               <div class="param-content">
-                <div class="param-description">Description for the tray</div>
+                <div class="param-description">Email for the JIRA user</div>
                 <div class="param-required">Type: String</div>
                 <div class="param-required">Required: Yes</div>
               </div>
             </div>
             
             <div>
-              <div class="param-title">list</div>
+              <div class="param-title">token</div>
               <div class="param-content">
-                <div class="param-description">A list of strings, where each string represents a device id that needs to be included in the tray</div>
+                <div class="param-description">Auth Token for the JIRA user</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">url</div>
+              <div class="param-content">
+                <div class="param-description">URL for your JIRA project</div>
                 <div class="param-required">Type: String</div>
                 <div class="param-required">Required: Yes</div>
               </div>
@@ -192,39 +199,19 @@
             <h2 class="sub-header">Response Syntax</h2>
             <pre>
               <code class="json">{
-    &quot;json&quot;: {
-        &quot;response&quot;: {
-            &quot;data&quot;: {
-                &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;TOPTAL_3&quot;
-            },
-            &quot;session&quot;: {
-                &quot;sessionId&quot;: &quot;YGAAADAAAAAA&quot;
-            },
-            &quot;statusCode&quot;: &quot;0&quot;,
-            &quot;statusMessage&quot;: &quot;Success&quot;
-        }
+  &quot;json&quot;: {
+    &quot;response&quot;: {
+      &quot;session&quot;: {
+        &quot;sessionId&quot;: &quot;PY2AAXAAAAAA&quot;
+      },
+      &quot;statusCode&quot;: &quot;0&quot;,
+      &quot;statusMessage&quot;: &quot;Success&quot;
     }
+  }
 }</code>
             </pre>
             <div class="divider"></div>
             <h2 class="sub-header">Response Elements</h2>
-            
-            <div>
-              <div class="param-title">id</div>
-              <div class="param-content">
-                <div class="param-description">id of the created tray</div>
-                <div class="param-required">Type: String</div>
-              </div>
-            </div>
-            
-            <div>
-              <div class="param-title">name</div>
-              <div class="param-content">
-                <div class="param-description">name of the created tray</div>
-                <div class="param-required">Type: String</div>
-              </div>
-            </div>
             
             <div class="footer"></div>
           </div>
