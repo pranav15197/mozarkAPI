@@ -4,119 +4,126 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style rel="stylesheet">
-      body, html {
-        padding: 0px;
-        margin: 0px;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 400;
-      }
-      h1 {
-        font-weight: 400;
-      }
-      p {
-        font-weight: 300;
-      }
-      .main {
-        background-color: #f2f3f3;
-        height: 100%;
-        width: 100%;
-      }
-      .top-nav {
-        height: 50px;
-        background-color: #161920;
-        width: 100%;
-      }
-      .breadcrumb {
-        height: 20px;
-        background-color: #232f3e;
-        width: 100%;
-      }
-      .sidebar {
-        background-color: #ffffff;
-        width: 300px;
-        float: left;
-        height: calc(100% - 70px);
-        border-right: 1px solid #c9cecf;
-      }
-      .content {
-        padding: 0 20px;
-        float: left;
-        width: calc(100% - 341px);
-        height: calc(100% - 70px);
-      }
-      .content-inner {
-        width: calc(100% - 80px);
-        padding: 0 40px;
-        height: 100%;
-        background-color: #ffffff;
-        overflow-y: scroll; 
-        border-right: 1px solid #c9cecf;
-        border-left: 1px solid #c9cecf;
-      }
-      .divider {
-        border-bottom: 1px solid #d5dbdb;
-        width: 100%;
-        height: 0px;
-        margin: 40px 0px;
-      }
-      .url {
-        color: #444;
-      }
-      .method {
-        background-color: #eb5f07;
-        border-radius: 2px;
-        padding: 4px 8px;
-        color: white;
-        margin-left: 4px;
-      }
-      .description {
-      }
-      .sub-header {
-        font-weight: 600;
-      }
-      .json {
-        border: 1px solid #aab7b8;
-        border-radius: 2px;
-      }
-      .param-title {
-        font-weight: 600;
-        color: #0073bb; 
-      }
-      .param-content {
-        padding-left: 40px;
-        margin-bottom: 15px;
-      }
-      .param-content div {
-        margin-top: 10px;
-      }
-      .footer {
-        height: 40px;
-        width: 100%;
-      }
-      .logo-image {
-        height: 50px;
-        float: left;
-      }
-      .company-name {
-        float: left;
-        color: white;
-        font-size: 25px;
-        font-weight: 600;
-      }
-      .api-list {
-        height: 100%;
-        overflow: scroll;
-      }
-      .api-link a {
-        text-decoration: none;
-      }
-      .api-link {
-        width: 100%;
-        padding: 10px 0;
-        border-bottom: 1px solid black;
-        text-align: center;
-      }
-    </style>
+    body, html {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    }
+    h1 {
+    font-weight: 400;
+    }
+    p {
+    font-weight: 300;
+    }
+    .main {
+    background-color: #f2f3f3;
+    height: 100%;
+    width: 100%;
+    }
+    .top-nav {
+    height: 50px;
+    background-color: #161920;
+    width: 100%;
+    }
+    .breadcrumb {
+    height: 20px;
+    background-color: #232f3e;
+    width: 100%;
+    }
+    .sidebar {
+    background-color: #ffffff;
+    width: 300px;
+    float: left;
+    height: calc(100% - 70px);
+    border-right: 1px solid #c9cecf;
+    }
+    .content {
+    padding: 0 20px;
+    float: left;
+    width: calc(100% - 341px);
+    height: calc(100% - 70px);
+    }
+    .content-inner {
+    width: calc(100% - 80px);
+    padding: 0 40px;
+    height: 100%;
+    background-color: #ffffff;
+    overflow-y: scroll; 
+    border-right: 1px solid #c9cecf;
+    border-left: 1px solid #c9cecf;
+    }
+    .divider {
+    border-bottom: 1px solid #d5dbdb;
+    width: 100%;
+    height: 0px;
+    margin: 40px 0px;
+    }
+    .url {
+    color: #444;
+    }
+    .method {
+    background-color: #eb5f07;
+    border-radius: 2px;
+    padding: 4px 8px;
+    color: white;
+    margin-left: 4px;
+    }
+    .description {
+    }
+    .sub-header {
+    font-weight: 600;
+    }
+    .json {
+    border: 1px solid #aab7b8;
+    border-radius: 2px;
+    }
+    .param-title {
+    font-weight: 600;
+    color: #0073bb; 
+    }
+    .param-content {
+    padding-left: 40px;
+    margin-bottom: 15px;
+    }
+    .param-content div {
+    margin-top: 10px;
+    }
+    .footer {
+    height: 40px;
+    width: 100%;
+    }
+    .logo-image {
+    height: 50px;
+    float: left;
+    }
+    .company-name {
+    float: left;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    }
+    .api-list {
+    height: 100%;
+    overflow: scroll;
+    }
+    .api-link a {
+    text-decoration: none;
+    color: #545b64;
+    font-weight: 600;
+    }
+    .api-link a:hover {
+    color: black;
+    }
+    .api-link {
+    width: calc(100%-20px);
+    padding: 10px 20px;
+    font-size: 0.8em;
+    }
+    .active a {
+    color: #ec7111
+    }
+</style>
   </head>
   <body>
     <div class="main">
@@ -130,101 +137,130 @@
       </div>
       <div class="container">
         <div class="sidebar">
-          <div class="api-list">
-          
-            <div class="api-link">
-              <a href="/api_doc/1/">SIGN UP</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/2/">LOGIN</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/3/">VERIFY API</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/4/">CREATE PROJECT</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/5/">LIST ALL PROJECTS</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/6/">UPDATE PROJECT</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/7/">LIST DEVICES</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/8/">LIST TRAYS</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/9/">CREATE TRAY</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/10/">UPDATE TRAY</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/11/">UPLOAD APK</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/12/">LIST APPS</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/13/">EDIT APP</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/14/">Upload Script</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/15/">List Scripts</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/16/">Execute Tray</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/17/">List Jobs</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/18/">View Job Details</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/19/">Test Reports for users</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/20/">Configure JIRA</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/21/">Get Details for JIRA account</a>
-            </div>
-          
-            <div class="api-link">
-              <a href="/api_doc/22/">Report A bug on JIRA</a>
-            </div>
-          
-          </div>
-        </div>
+    <div class="api-list">
+    <div class="api-link">
+    <a href="/api_doc/introduction/">Introduction</a>
+    </div>
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/1/">Register</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/3/">Verify Email</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/2/">Login</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/4/">Create Project</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/5/">Fetch created projects</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/11/">Upload a build</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/12/">Fetch uploaded builds</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/14/">Upload Script</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/15/">Fetch Scripts</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/7/">Fetch devices</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/9/">Create device group</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/16/">Test</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/8/">Fetch device groups</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/17/">Fetch test run ids and status</a>
+    </div>
+    
+    
+    
+    <div class="api-link active">
+        <a href="/api_doc/18/">fetch test run details along with attachments</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/19/">View test reports for users</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/20/">Configure JIRA account</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/21/">Get details for configured jira account to report bug</a>
+    </div>
+    
+    
+    
+    <div class="api-link">
+        <a href="/api_doc/22/">Report Bug</a>
+    </div>
+    
+    
+    </div>
+</div>
         <div class="content">
           <div class="content-inner">
-            <h1>View Job Details</h1>
+            <h1>fetch test run details along with attachments</h1>
             <p class="url">
               /functional/job/details   <span class="method">POST</span>
             </p>

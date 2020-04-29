@@ -203,7 +203,7 @@
     
     
     
-    <div class="api-link active">
+    <div class="api-link">
         <a href="/api_doc/9/">Create device group</a>
     </div>
     
@@ -260,96 +260,10 @@
 </div>
         <div class="content">
           <div class="content-inner">
-            <h1>Create device group</h1>
-            <p class="url">
-              /functional/tray   <span class="method">POST</span>
+            <h1>Introduction</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
             </p>
-
-            <p class="description">
-            This API is used to create a tray or a collection of devices that would further be used for automated testing.
-            </p>
-            <div class="divider"></div>
-
-            <h2 class="sub-header">Request Syntax</h2>
-            <pre>
-              <code class="json">{
-    &quot;json&quot;: {
-        &quot;request&quot;: {
-            &quot;session&quot;: {
-                &quot;sessionId&quot;: &quot;String&quot;
-            },
-            &quot;data&quot;: {
-                &quot;description&quot;: &quot;String&quot;,
-                &quot;list&quot;: [
-                   &quot;String&quot;,
-                   &quot;String&quot;
-                ]
-            }
-        }
-    }
-}</code>
-            </pre>
-            <div class="divider"></div>
-
-            <h2 class="sub-header">Request Parameters</h2>
-            <p>The request accepts the following data in JSON format.</p>
-            
-            <div>
-              <div class="param-title">description</div>
-              <div class="param-content">
-                <div class="param-description">Description for the tray</div>
-                <div class="param-required">Type: String</div>
-                <div class="param-required">Required: Yes</div>
-              </div>
-            </div>
-            
-            <div>
-              <div class="param-title">list</div>
-              <div class="param-content">
-                <div class="param-description">A list of strings, where each string represents a device id that needs to be included in the tray</div>
-                <div class="param-required">Type: String</div>
-                <div class="param-required">Required: Yes</div>
-              </div>
-            </div>
-            
-            <div class="divider"></div>
-            <h2 class="sub-header">Response Syntax</h2>
-            <pre>
-              <code class="json">{
-    &quot;json&quot;: {
-        &quot;response&quot;: {
-            &quot;data&quot;: {
-                &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;TOPTAL_3&quot;
-            },
-            &quot;session&quot;: {
-                &quot;sessionId&quot;: &quot;YGAAADAAAAAA&quot;
-            },
-            &quot;statusCode&quot;: &quot;0&quot;,
-            &quot;statusMessage&quot;: &quot;Success&quot;
-        }
-    }
-}</code>
-            </pre>
-            <div class="divider"></div>
-            <h2 class="sub-header">Response Elements</h2>
-            
-            <div>
-              <div class="param-title">id</div>
-              <div class="param-content">
-                <div class="param-description">id of the created tray</div>
-                <div class="param-required">Type: String</div>
-              </div>
-            </div>
-            
-            <div>
-              <div class="param-title">name</div>
-              <div class="param-content">
-                <div class="param-description">name of the created tray</div>
-                <div class="param-required">Type: String</div>
-              </div>
-            </div>
-            
             <div class="footer"></div>
           </div>
         </div>
