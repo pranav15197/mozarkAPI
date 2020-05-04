@@ -250,32 +250,27 @@
 </div>
         <div class="content">
           <div class="content-inner">
-            <h1>Register</h1>
+            <h1>Get Verification Code</h1>
             <p class="url">
-              /functional/user/signup/   <span class="method">POST</span>
+              /functional/user/signup/getcode   <span class="method">POST</span>
             </p>
 
             <p class="description">
-            This API is used to register a new user. A verification code will be sent to the registered user email id.
+            This API is used to get a verification code sent to your email ID, with which you want to create an account.
             </p>
             <div class="divider"></div>
 
             <h2 class="sub-header">Request Syntax</h2>
             <pre>
               <code class="json">{
-   &quot;json&quot;:{
-      &quot;request&quot;:{
-         &quot;data&quot;:{
-            &quot;firstName&quot;:&quot;String&quot;,
-            &quot;lastName&quot;:&quot;String&quot;,
-            &quot;email&quot;:&quot;String&quot;,
-            &quot;password&quot;:&quot;String&quot;,
-            &quot;confirmPassword&quot;:&quot;String&quot;,
-            &quot;mobile&quot;:&quot;String&quot;,
-            &quot;countryCode&quot;:&quot;String&quot;
-         }
+  &quot;json&quot;: {
+    &quot;request&quot;: {
+      &quot;data&quot;: {
+        &quot;firstName&quot;: &quot;String&quot;,
+        &quot;email&quot;: &quot;String&quot;,
       }
-   }
+    }
+  }
 }</code>
             </pre>
             <div class="divider"></div>
@@ -286,16 +281,7 @@
             <div>
               <div class="param-title">firstName</div>
               <div class="param-content">
-                <div class="param-description">The first name of the user</div>
-                <div class="param-required">Type: String</div>
-                <div class="param-required">Required: Yes</div>
-              </div>
-            </div>
-            
-            <div>
-              <div class="param-title">lastName</div>
-              <div class="param-content">
-                <div class="param-description">The last name of the user</div>
+                <div class="param-description">First Name of the user</div>
                 <div class="param-required">Type: String</div>
                 <div class="param-required">Required: Yes</div>
               </div>
@@ -304,25 +290,7 @@
             <div>
               <div class="param-title">email</div>
               <div class="param-content">
-                <div class="param-description">User&#x27;s email. This must be a work email</div>
-                <div class="param-required">Type: String</div>
-                <div class="param-required">Required: Yes</div>
-              </div>
-            </div>
-            
-            <div>
-              <div class="param-title">password</div>
-              <div class="param-content">
-                <div class="param-description">User&#x27;s password. Must be &gt;8 characters</div>
-                <div class="param-required">Type: String</div>
-                <div class="param-required">Required: Yes</div>
-              </div>
-            </div>
-            
-            <div>
-              <div class="param-title">confirmPassword</div>
-              <div class="param-content">
-                <div class="param-description">User&#x27;s password entered again for confirmation</div>
+                <div class="param-description">Email of the user</div>
                 <div class="param-required">Type: String</div>
                 <div class="param-required">Required: Yes</div>
               </div>
@@ -332,32 +300,19 @@
             <h2 class="sub-header">Response Syntax</h2>
             <pre>
               <code class="json">{
-   &quot;json&quot;:{
-      &quot;response&quot;:{
-         &quot;statusCode&quot;:&quot;0&quot;,
-         &quot;statusMessage&quot;:&quot;Success&quot;
-      }
-   }
+  &quot;json&quot;: {
+    &quot;response&quot;: {
+      &quot;data&quot;: {
+        &quot;isEmail&quot;: true
+      },
+      &quot;statusCode&quot;: &quot;0&quot;,
+      &quot;statusMessage&quot;: &quot;Success&quot;
+    }
+  }
 }</code>
             </pre>
             <div class="divider"></div>
             <h2 class="sub-header">Response Elements</h2>
-            
-            <div>
-              <div class="param-title">statusCode</div>
-              <div class="param-content">
-                <div class="param-description">Error code. 0 in case of no error.</div>
-                <div class="param-required">Type: String</div>
-              </div>
-            </div>
-            
-            <div>
-              <div class="param-title">statusMessage</div>
-              <div class="param-content">
-                <div class="param-description">Error or Success message</div>
-                <div class="param-required">Type: String</div>
-              </div>
-            </div>
             
             <div class="footer"></div>
           </div>
