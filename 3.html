@@ -13,7 +13,7 @@
     h1 {
     font-weight: 400;
     }
-    p {
+    p, li {
     font-weight: 300;
     }
     .main {
@@ -256,7 +256,7 @@
             </p>
 
             <p class="description">
-            This API is used to validate a newly registered User&#x27;s email. A verification code is sent to the user&#x27;s email post-registration which needs to be passed in this API
+            This API is used to validate a newly registered User&#x27;s email. A verification code is sent to the user&#x27;s email which needs to be passed in this API. Only after this verification is complete the user can continue to register.
             </p>
             <div class="divider"></div>
 
@@ -300,12 +300,15 @@
             <h2 class="sub-header">Response Syntax</h2>
             <pre>
               <code class="json">{
-    &quot;json&quot;: {
-        &quot;response&quot;: {
-            &quot;statusCode&quot;: &quot;0&quot;,
-            &quot;statusMessage&quot;: &quot;Email verified successfully&quot;
-        }
+  &quot;json&quot;: {
+    &quot;response&quot;: {
+      &quot;session&quot;: {
+        &quot;sessionId&quot;: &quot;CDYAADAAAAAA&quot;
+      },
+      &quot;statusCode&quot;: &quot;0&quot;,
+      &quot;statusMessage&quot;: &quot;Success&quot;
     }
+  }
 }</code>
             </pre>
             <div class="divider"></div>

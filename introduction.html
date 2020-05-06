@@ -13,7 +13,7 @@
     h1 {
     font-weight: 400;
     }
-    p {
+    p, li {
     font-weight: 300;
     }
     .main {
@@ -224,8 +224,50 @@
           <div class="content-inner">
             <h1>Introduction</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+              The Mozark APIs are a set of REST APIs that allow the user to access all the functionalities of the platform including -
             </p>
+            <ul>
+              <li>Access on-field and on-cloud devices</li>
+              <li>Distribute app and test using Automation scripts (Appium, Appium, UIAutomator, Espresso, Calabash, XCTest UI)</li>
+              <li>Access logs, screen shots</li>
+              <li>Access test history and results</li>
+            </ul>
+            <p>
+              The APIs use a Token based authentication. This token needs to pe passed in the request body. The request and response bodies
+              across all the APIs follow the following structure
+            </p>
+            <h2 class="sub-header">Request</h2>
+            <pre>
+              <code class="json">{
+  "json": {
+    "request": {
+      "session": {
+      	"sessionId": ""
+      },
+      "data": {
+      	...
+      }
+    }
+  }
+}</code>
+            </pre>
+            <h2 class="sub-header">Response Syntax</h2>
+            <pre>
+              <code class="json">{
+  "json": {
+    "response": {
+      "data": {
+        ...
+      },
+      "session": {
+        ...
+      },
+      "statusCode": "0",
+      "statusMessage": "Success"
+    }
+  }
+}</code>
+            </pre>
             <div class="footer"></div>
           </div>
         </div>

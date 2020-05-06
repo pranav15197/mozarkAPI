@@ -13,7 +13,7 @@
     h1 {
     font-weight: 400;
     }
-    p {
+    p, li {
     font-weight: 300;
     }
     .main {
@@ -256,26 +256,30 @@
             </p>
 
             <p class="description">
-            This API is used to register a new user. A verification code will be sent to the registered user email id.
+            This API is used to register a new user. This should be called after the email has been verified
             </p>
             <div class="divider"></div>
 
             <h2 class="sub-header">Request Syntax</h2>
             <pre>
               <code class="json">{
-   &quot;json&quot;:{
-      &quot;request&quot;:{
-         &quot;data&quot;:{
-            &quot;firstName&quot;:&quot;String&quot;,
-            &quot;lastName&quot;:&quot;String&quot;,
-            &quot;email&quot;:&quot;String&quot;,
-            &quot;password&quot;:&quot;String&quot;,
-            &quot;confirmPassword&quot;:&quot;String&quot;,
-            &quot;mobile&quot;:&quot;String&quot;,
-            &quot;countryCode&quot;:&quot;String&quot;
-         }
+  &quot;json&quot;: {
+    &quot;request&quot;: {
+      &quot;session&quot;: {
+        &quot;sessionId&quot;: &quot;String&quot;
+      },
+      &quot;data&quot;: {
+        &quot;firstName&quot;: &quot;String&quot;,
+        &quot;email&quot;: &quot;String&quot;,
+        &quot;mobile&quot;: &quot;String&quot;,
+        &quot;country&quot;: &quot;String&quot;,
+        &quot;companyName&quot;: &quot;String,
+        &quot;jobTitle&quot;: &quot;String&quot;,
+        &quot;password&quot;: &quot;String&quot;,
+        &quot;confirmPassword&quot;: &quot;String&quot;
       }
-   }
+    }
+  }
 }</code>
             </pre>
             <div class="divider"></div>
@@ -332,12 +336,15 @@
             <h2 class="sub-header">Response Syntax</h2>
             <pre>
               <code class="json">{
-   &quot;json&quot;:{
-      &quot;response&quot;:{
-         &quot;statusCode&quot;:&quot;0&quot;,
-         &quot;statusMessage&quot;:&quot;Success&quot;
-      }
-   }
+  &quot;json&quot;: {
+    &quot;response&quot;: {
+      &quot;session&quot;: {
+        &quot;sessionId&quot;: &quot;CDYAADAAAAAA&quot;
+      },
+      &quot;statusCode&quot;: &quot;0&quot;,
+      &quot;statusMessage&quot;: &quot;Success&quot;
+    }
+  }
 }</code>
             </pre>
             <div class="divider"></div>
