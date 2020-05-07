@@ -270,27 +270,27 @@
           <div class="content-inner">
             <h1>Upload a build</h1>
             <p class="url">
-              /functional/appupload   <span class="method">POST</span>
+              http://aquamark-dev.mozark.ai:8080/functional/appupload   <span class="method">POST</span>
             </p>
 
             <p class="description">
-            This API is used to upload an APK to be tested. Please note that the call to this API will need to be through a multipart form-data request. The JSON request parameters shown below should be sent through a URL parameter named &#x27;request&#x27;. The actual APK file has to be sent in form-data through a field named &#x27;file&#x27;
+            This API is used to upload an APK to be tested. Please note that the call to this API will need to be through a multipart form-data request. The JSON request parameters shown below should be sent through a URL parameter named <b>'request'</b>. The actual APK file has to be sent in form-data through a field named <b>'file'</b>
             </p>
             <div class="divider"></div>
 
             <h2 class="sub-header">Request Syntax</h2>
             <pre>
               <code class="json">{
-  &quot;json&quot;: {
-    &quot;request&quot;: {
-      &quot;session&quot;: {
-      	&quot;sessionId&quot;: &quot;String&quot;
-      },
-      &quot;data&quot;: {
-      	&quot;projectId&quot;: Integer
+   &quot;json&quot;:{
+      &quot;request&quot;:{
+         &quot;session&quot;:{
+            &quot;sessionId&quot;:&quot;String&quot;
+         },
+         &quot;data&quot;:{
+            &quot;projectId&quot;:&quot;Integer&quot;
+         }
       }
-    }
-  }
+   }
 }</code>
             </pre>
             <div class="divider"></div>
@@ -325,6 +325,17 @@
               </div>
             </div>
             
+
+            <div class="divider"></div>
+            <h2 class="sub-header">Request Headers</h2>
+            <p>The following headers must be sent with the request.</p>
+            <div>
+              <div class="param-title">content-type</div>
+              <div class="param-content">
+                <div class="param-description">application/json</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
             <div class="divider"></div>
             <h2 class="sub-header">Response Syntax</h2>
             <pre>
@@ -343,16 +354,18 @@
     }
 }</code>
             </pre>
+            
             <div class="divider"></div>
             <h2 class="sub-header">Response Elements</h2>
             
             <div>
               <div class="param-title">appId</div>
               <div class="param-content">
-                <div class="param-description">A unique ID for the uploaded APK</div>
+                <div class="param-description">A unique ID for the uploaded APK or .ipa (IOS)</div>
                 <div class="param-required">Type: String</div>
               </div>
             </div>
+            
             
             <div class="footer"></div>
           </div>

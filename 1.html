@@ -252,11 +252,11 @@
           <div class="content-inner">
             <h1>Register</h1>
             <p class="url">
-              /functional/user/signup/   <span class="method">POST</span>
+              http://aquamark-dev.mozark.ai:8080/functional/user/signup/   <span class="method">POST</span>
             </p>
 
             <p class="description">
-            This API is used to register a new user. This should be called after the email has been verified
+            This API is used to register a new user. This should be called after the email has been verified.  This API requires the session ID that was returned from the verify API. Once the registration is complete this session ID will expire.
             </p>
             <div class="divider"></div>
 
@@ -297,15 +297,6 @@
             </div>
             
             <div>
-              <div class="param-title">lastName</div>
-              <div class="param-content">
-                <div class="param-description">The last name of the user</div>
-                <div class="param-required">Type: String</div>
-                <div class="param-required">Required: Yes</div>
-              </div>
-            </div>
-            
-            <div>
               <div class="param-title">email</div>
               <div class="param-content">
                 <div class="param-description">User&#x27;s email. This must be a work email</div>
@@ -332,6 +323,62 @@
               </div>
             </div>
             
+            <div>
+              <div class="param-title">mobile</div>
+              <div class="param-content">
+                <div class="param-description">User&#x27;s mobile number</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">country</div>
+              <div class="param-content">
+                <div class="param-description">User&#x27;s country</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">companyName</div>
+              <div class="param-content">
+                <div class="param-description">User&#x27;s company name</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">jobTitle</div>
+              <div class="param-content">
+                <div class="param-description">User&#x27;s job title</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">sessionId</div>
+              <div class="param-content">
+                <div class="param-description">This is the temporary session ID generated after the verification step</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+
+            <div class="divider"></div>
+            <h2 class="sub-header">Request Headers</h2>
+            <p>The following headers must be sent with the request.</p>
+            <div>
+              <div class="param-title">content-type</div>
+              <div class="param-content">
+                <div class="param-description">application/json</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
             <div class="divider"></div>
             <h2 class="sub-header">Response Syntax</h2>
             <pre>
@@ -347,6 +394,7 @@
   }
 }</code>
             </pre>
+            
             <div class="divider"></div>
             <h2 class="sub-header">Response Elements</h2>
             
@@ -365,6 +413,15 @@
                 <div class="param-required">Type: String</div>
               </div>
             </div>
+            
+            <div>
+              <div class="param-title">sessionId</div>
+              <div class="param-content">
+                <div class="param-description">Session Identifier for the user. This can be used from here on</div>
+                <div class="param-required">Type: String</div>
+              </div>
+            </div>
+            
             
             <div class="footer"></div>
           </div>

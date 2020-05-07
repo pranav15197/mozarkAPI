@@ -246,7 +246,7 @@
           <div class="content-inner">
             <h1>Fetch test run ids and status</h1>
             <p class="url">
-              /functional/job/list   <span class="method">POST</span>
+              http://aquamark-dev.mozark.ai:8080/functional/job/list   <span class="method">POST</span>
             </p>
 
             <p class="description">
@@ -260,10 +260,10 @@
   &quot;json&quot;: {
     &quot;request&quot;: {
       &quot;session&quot;: {
-      	&quot;sessionId&quot;: &quot;{{session_id}}&quot;
+      	&quot;sessionId&quot;: &quot;String&quot;
       },
       &quot;data&quot;: {
-      	&quot;trayId&quot;: 3
+      	&quot;trayId&quot;: Integer
       }
     }
   }
@@ -287,11 +287,22 @@
               <div class="param-title">trayId</div>
               <div class="param-content">
                 <div class="param-description">ID of the tray for which jobs re required</div>
-                <div class="param-required">Type: String</div>
+                <div class="param-required">Type: Integer</div>
                 <div class="param-required">Required: Yes</div>
               </div>
             </div>
             
+
+            <div class="divider"></div>
+            <h2 class="sub-header">Request Headers</h2>
+            <p>The following headers must be sent with the request.</p>
+            <div>
+              <div class="param-title">content-type</div>
+              <div class="param-content">
+                <div class="param-description">application/json</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
             <div class="divider"></div>
             <h2 class="sub-header">Response Syntax</h2>
             <pre>
@@ -318,7 +329,6 @@
                             &quot;userId&quot;: 12,
                             &quot;email&quot;: &quot;pranav.tiwari@toptal.com&quot;,
                             &quot;firstName&quot;: &quot;Pranav2&quot;,
-                            &quot;lastName&quot;: &quot;Tiwari&quot;,
                             &quot;mobile&quot;: &quot;91.7738260941&quot;,
                             &quot;organizationAdmin&quot;: true,
                             &quot;organizationId&quot;: 6,
@@ -346,7 +356,6 @@
                             &quot;userId&quot;: 12,
                             &quot;email&quot;: &quot;pranav.tiwari@toptal.com&quot;,
                             &quot;firstName&quot;: &quot;Pranav2&quot;,
-                            &quot;lastName&quot;: &quot;Tiwari&quot;,
                             &quot;mobile&quot;: &quot;91.7738260941&quot;,
                             &quot;organizationAdmin&quot;: true,
                             &quot;organizationId&quot;: 6,
@@ -374,7 +383,6 @@
                             &quot;userId&quot;: 12,
                             &quot;email&quot;: &quot;pranav.tiwari@toptal.com&quot;,
                             &quot;firstName&quot;: &quot;Pranav2&quot;,
-                            &quot;lastName&quot;: &quot;Tiwari&quot;,
                             &quot;mobile&quot;: &quot;91.7738260941&quot;,
                             &quot;organizationAdmin&quot;: true,
                             &quot;organizationId&quot;: 6,
@@ -396,6 +404,7 @@
     }
 }</code>
             </pre>
+            
             <div class="divider"></div>
             <h2 class="sub-header">Response Elements</h2>
             
@@ -414,6 +423,7 @@
                 <div class="param-required">Type: String</div>
               </div>
             </div>
+            
             
             <div class="footer"></div>
           </div>

@@ -270,7 +270,7 @@
           <div class="content-inner">
             <h1>Fetch device groups</h1>
             <p class="url">
-              /functional/tray/list   <span class="method">POST</span>
+              http://aquamark-dev.mozark.ai:8080/functional/tray/list   <span class="method">POST</span>
             </p>
 
             <p class="description">
@@ -304,6 +304,17 @@
               </div>
             </div>
             
+
+            <div class="divider"></div>
+            <h2 class="sub-header">Request Headers</h2>
+            <p>The following headers must be sent with the request.</p>
+            <div>
+              <div class="param-title">content-type</div>
+              <div class="param-content">
+                <div class="param-description">application/json</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
             <div class="divider"></div>
             <h2 class="sub-header">Response Syntax</h2>
             <pre>
@@ -375,6 +386,7 @@
     }
 }</code>
             </pre>
+            
             <div class="divider"></div>
             <h2 class="sub-header">Response Elements</h2>
             
@@ -393,6 +405,7 @@
                 <div class="param-required">Type: String</div>
               </div>
             </div>
+            
             
             <div class="footer"></div>
           </div>

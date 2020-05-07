@@ -246,11 +246,11 @@
           <div class="content-inner">
             <h1>Configure JIRA account</h1>
             <p class="url">
-              /functional/jira/configure   <span class="method">PUT</span>
+              http://aquamark-dev.mozark.ai:8080/functional/jira/configure   <span class="method">PUT</span>
             </p>
 
             <p class="description">
-            This API is used to configure the user&#x27;s JIRA account with the platform so that bugs can be raised against the test cases.
+            This API is used to configure the user's JIRA account with the platform so that bugs can be raised against the test cases.
             </p>
             <div class="divider"></div>
 
@@ -303,6 +303,17 @@
               </div>
             </div>
             
+
+            <div class="divider"></div>
+            <h2 class="sub-header">Request Headers</h2>
+            <p>The following headers must be sent with the request.</p>
+            <div>
+              <div class="param-title">content-type</div>
+              <div class="param-content">
+                <div class="param-description">application/json</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
             <div class="divider"></div>
             <h2 class="sub-header">Response Syntax</h2>
             <pre>
@@ -318,8 +329,6 @@
   }
 }</code>
             </pre>
-            <div class="divider"></div>
-            <h2 class="sub-header">Response Elements</h2>
             
             <div class="footer"></div>
           </div>

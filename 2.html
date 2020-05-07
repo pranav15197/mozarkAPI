@@ -252,7 +252,7 @@
           <div class="content-inner">
             <h1>Login</h1>
             <p class="url">
-              /functional/user/signin   <span class="method">POST</span>
+              http://aquamark-dev.mozark.ai:8080/functional/user/signin   <span class="method">POST</span>
             </p>
 
             <p class="description">
@@ -281,7 +281,7 @@
             <div>
               <div class="param-title">email</div>
               <div class="param-content">
-                <div class="param-description">User&#x27;s email</div>
+                <div class="param-description">User&#x27;s email or mobile number</div>
                 <div class="param-required">Type: String</div>
                 <div class="param-required">Required: Yes</div>
               </div>
@@ -296,36 +296,47 @@
               </div>
             </div>
             
+
+            <div class="divider"></div>
+            <h2 class="sub-header">Request Headers</h2>
+            <p>The following headers must be sent with the request.</p>
+            <div>
+              <div class="param-title">content-type</div>
+              <div class="param-content">
+                <div class="param-description">application/json</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
             <div class="divider"></div>
             <h2 class="sub-header">Response Syntax</h2>
             <pre>
               <code class="json">{
-    &quot;json&quot;: {
-        &quot;response&quot;: {
-            &quot;data&quot;: {
-                &quot;userDetails&quot;: {
-                    &quot;userId&quot;: 12,
-                    &quot;email&quot;: &quot;pranav.tiwari@toptal.com&quot;,
-                    &quot;firstName&quot;: &quot;Pranav2&quot;,
-                    &quot;lastName&quot;: &quot;Tiwari&quot;,
-                    &quot;mobile&quot;: &quot;91.7738260941&quot;,
-                    &quot;organizationAdmin&quot;: true,
-                    &quot;organizationId&quot;: 6,
-                    &quot;domain&quot;: &quot;TOPTAL.COM&quot;,
-                    &quot;emailValidated&quot;: true,
-                    &quot;createdTime&quot;: &quot;2020-04-10 11:00:39.0&quot;,
-                    &quot;firstLogin&quot;: true
-                }
-            },
-            &quot;session&quot;: {
-                &quot;sessionId&quot;: &quot;CGZAADAAAAAA&quot;
-            },
-            &quot;statusCode&quot;: &quot;0&quot;,
-            &quot;statusMessage&quot;: &quot;Success&quot;
+  &quot;json&quot;: {
+    &quot;response&quot;: {
+      &quot;data&quot;: {
+        &quot;userDetails&quot;: {
+          &quot;userId&quot;: 6,
+          &quot;email&quot;: &quot;swayam@infosoftjoin.in&quot;,
+          &quot;firstName&quot;: &quot;Swayam&quot;,
+          &quot;mobile&quot;: &quot;9126325823&quot;,
+          &quot;organizationAdmin&quot;: false,
+          &quot;companyName&quot;: &quot;ISJ&quot;,
+          &quot;jobTitle&quot;: &quot;Technical Architect&quot;,
+          &quot;validated&quot;: true,
+          &quot;createdTime&quot;: &quot;2020-04-28 11:17:13.0&quot;,
+          &quot;firstLogin&quot;: false
         }
+      },
+      &quot;session&quot;: {
+        &quot;sessionId&quot;: &quot;XDYAADAAAAAA&quot;
+      },
+      &quot;statusCode&quot;: &quot;0&quot;,
+      &quot;statusMessage&quot;: &quot;Success&quot;
     }
+  }
 }</code>
             </pre>
+            
             <div class="divider"></div>
             <h2 class="sub-header">Response Elements</h2>
             
@@ -349,14 +360,6 @@
               <div class="param-title">firstName</div>
               <div class="param-content">
                 <div class="param-description">user&#x27;s first name</div>
-                <div class="param-required">Type: String</div>
-              </div>
-            </div>
-            
-            <div>
-              <div class="param-title">lastName</div>
-              <div class="param-content">
-                <div class="param-description">user&#x27;s last name</div>
                 <div class="param-required">Type: String</div>
               </div>
             </div>
@@ -416,6 +419,7 @@
                 <div class="param-required">Type: String</div>
               </div>
             </div>
+            
             
             <div class="footer"></div>
           </div>

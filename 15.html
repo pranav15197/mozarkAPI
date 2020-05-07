@@ -270,7 +270,7 @@
           <div class="content-inner">
             <h1>Fetch Scripts</h1>
             <p class="url">
-              /functional/script   <span class="method">POST</span>
+              http://aquamark-dev.mozark.ai:8080/functional/script   <span class="method">POST</span>
             </p>
 
             <p class="description">
@@ -284,8 +284,11 @@
   &quot;json&quot;: {
     &quot;request&quot;: {
       &quot;session&quot;: {
-      	&quot;sessionId&quot;: &quot;{{session_id}}&quot;
-      }
+      	&quot;sessionId&quot;: &quot;String&quot;
+      },&quot;data&quot;:{
+        &quot;projectId&quot;: Integer
+}
+
     }
   }
 }</code>
@@ -304,6 +307,26 @@
               </div>
             </div>
             
+            <div>
+              <div class="param-title">projectId</div>
+              <div class="param-content">
+                <div class="param-description">ID of the project for which scripts need to be fetched</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+
+            <div class="divider"></div>
+            <h2 class="sub-header">Request Headers</h2>
+            <p>The following headers must be sent with the request.</p>
+            <div>
+              <div class="param-title">content-type</div>
+              <div class="param-content">
+                <div class="param-description">application/json</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
             <div class="divider"></div>
             <h2 class="sub-header">Response Syntax</h2>
             <pre>
@@ -332,6 +355,7 @@
     }
 }</code>
             </pre>
+            
             <div class="divider"></div>
             <h2 class="sub-header">Response Elements</h2>
             
@@ -350,6 +374,7 @@
                 <div class="param-required">Type: String</div>
               </div>
             </div>
+            
             
             <div class="footer"></div>
           </div>

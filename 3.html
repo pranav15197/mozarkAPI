@@ -252,11 +252,11 @@
           <div class="content-inner">
             <h1>Verify Email</h1>
             <p class="url">
-              /functional/user/signup/verifyemail   <span class="method">POST</span>
+              http://aquamark-dev.mozark.ai:8080/functional/user/signup/verify   <span class="method">POST</span>
             </p>
 
             <p class="description">
-            This API is used to validate a newly registered User&#x27;s email. A verification code is sent to the user&#x27;s email which needs to be passed in this API. Only after this verification is complete the user can continue to register.
+            This API is used to validate a newly registered User's email. A verification code is sent to the user's email which needs to be passed in this API. Only after this verification is complete the user can continue to register.
             </p>
             <div class="divider"></div>
 
@@ -281,9 +281,9 @@
             <div>
               <div class="param-title">email</div>
               <div class="param-content">
-                <div class="param-description">User&#x27;s email</div>
+                <div class="param-description">User&#x27;s email or mobile phone</div>
                 <div class="param-required">Type: String</div>
-                <div class="param-required">Required: No</div>
+                <div class="param-required">Required: Yes</div>
               </div>
             </div>
             
@@ -292,10 +292,21 @@
               <div class="param-content">
                 <div class="param-description">The verification code sent to the user&#x27;s email</div>
                 <div class="param-required">Type: String</div>
-                <div class="param-required">Required: No</div>
+                <div class="param-required">Required: Yes</div>
               </div>
             </div>
             
+
+            <div class="divider"></div>
+            <h2 class="sub-header">Request Headers</h2>
+            <p>The following headers must be sent with the request.</p>
+            <div>
+              <div class="param-title">content-type</div>
+              <div class="param-content">
+                <div class="param-description">application/json</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
             <div class="divider"></div>
             <h2 class="sub-header">Response Syntax</h2>
             <pre>
@@ -311,8 +322,18 @@
   }
 }</code>
             </pre>
+            
             <div class="divider"></div>
             <h2 class="sub-header">Response Elements</h2>
+            
+            <div>
+              <div class="param-title">sessionId</div>
+              <div class="param-content">
+                <div class="param-description">This is a temporary session ID generated for the verification process</div>
+                <div class="param-required">Type: String</div>
+              </div>
+            </div>
+            
             
             <div class="footer"></div>
           </div>

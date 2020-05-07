@@ -270,13 +270,13 @@
           <div class="content-inner">
             <h1>Upload Script</h1>
             <p class="url">
-              /functional/scriptupload?request=   <span class="method">POST</span>
+              http://aquamark-dev.mozark.ai:8080/functional/scriptupload?request=   <span class="method">POST</span>
             </p>
 
             <p class="description">
             This API is used to upload a script that will be used for automated testing for a project. This script has to be a zip file.
 
-This is supposed to be a multipart request. The JSON request body is to be sent through the URL parameter named &#x27;request&#x27;, and the script zip file has to be sent as a form-data field named &#x27;file&#x27;
+This is supposed to be a multipart request. The JSON request body is to be sent through the URL parameter named <b>'request'</b>, and the script zip file has to be sent as a form-data field named <b>'file'</b>
             </p>
             <div class="divider"></div>
 
@@ -293,7 +293,8 @@ This is supposed to be a multipart request. The JSON request body is to be sent 
         &quot;language&quot;: &quot;String&quot;,
         &quot;version&quot;: &quot;String&quot;,
         &quot;title&quot;: &quot;String&quot;,
-        &quot;projectId&quot;:Integer
+        &quot;projectId&quot;:Integer,
+        &quot;type&quot;: &quot;String&quot;,
       }
     }
   }
@@ -358,6 +359,17 @@ This is supposed to be a multipart request. The JSON request body is to be sent 
               </div>
             </div>
             
+
+            <div class="divider"></div>
+            <h2 class="sub-header">Request Headers</h2>
+            <p>The following headers must be sent with the request.</p>
+            <div>
+              <div class="param-title">content-type</div>
+              <div class="param-content">
+                <div class="param-description">application/json</div>
+                <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
             <div class="divider"></div>
             <h2 class="sub-header">Response Syntax</h2>
             <pre>
@@ -376,8 +388,18 @@ This is supposed to be a multipart request. The JSON request body is to be sent 
   }
 }</code>
             </pre>
+            
             <div class="divider"></div>
             <h2 class="sub-header">Response Elements</h2>
+            
+            <div>
+              <div class="param-title">scriptId</div>
+              <div class="param-content">
+                <div class="param-description">The ID of the uploaded script</div>
+                <div class="param-required">Type: String</div>
+              </div>
+            </div>
+            
             
             <div class="footer"></div>
           </div>
