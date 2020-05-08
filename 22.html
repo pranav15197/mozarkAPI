@@ -305,7 +305,7 @@
               <div class="param-title">jobId</div>
               <div class="param-content">
                 <div class="param-description">ID of the job for which the bug needs to be raised</div>
-                <div class="param-required">Type: String</div>
+                <div class="param-required">Type: Integer</div>
                 <div class="param-required">Required: Yes</div>
               </div>
             </div>
@@ -323,7 +323,7 @@
               <div class="param-title">project</div>
               <div class="param-content">
                 <div class="param-description">Details of the JIRA project</div>
-                <div class="param-required">Type: String</div>
+                <div class="param-required">Type: JsonObject</div>
                 <div class="param-required">Required: Yes</div>
               </div>
             </div>
@@ -332,7 +332,7 @@
               <div class="param-title">priority</div>
               <div class="param-content">
                 <div class="param-description">Priority to be set on JIRA</div>
-                <div class="param-required">Type: String</div>
+                <div class="param-required">Type: JsonObject</div>
                 <div class="param-required">Required: Yes</div>
               </div>
             </div>
@@ -341,7 +341,7 @@
               <div class="param-title">version</div>
               <div class="param-content">
                 <div class="param-description">Version of JIRA</div>
-                <div class="param-required">Type: String</div>
+                <div class="param-required">Type: JsonObject</div>
                 <div class="param-required">Required: Yes</div>
               </div>
             </div>
@@ -350,8 +350,17 @@
               <div class="param-title">assignee</div>
               <div class="param-content">
                 <div class="param-description">JIRA user to be marked as assignee of the bug report</div>
-                <div class="param-required">Type: String</div>
+                <div class="param-required">Type: JsonObject</div>
                 <div class="param-required">Required: Yes</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">description</div>
+              <div class="param-content">
+                <div class="param-description">A description for the bug</div>
+                <div class="param-required">Type: String</div>
+                <div class="param-required">Required: No</div>
               </div>
             </div>
             
@@ -393,7 +402,7 @@
               <div class="param-title">data</div>
               <div class="param-content">
                 <div class="param-description">Information of the ticket created on JIRA</div>
-                <div class="param-required">Type: String</div>
+                <div class="param-required">Type: ArrayJson</div>
               </div>
             </div>
             

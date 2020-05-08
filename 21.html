@@ -508,7 +508,31 @@ Ther is no JSON body required for this API, the user's session id is to be passe
               <div class="param-title">projects</div>
               <div class="param-content">
                 <div class="param-description">List of objects with details of projects for the JIRA account.</div>
-                <div class="param-required">Type: String</div>
+                <div class="param-required">Type: ArrayJson</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">priorities</div>
+              <div class="param-content">
+                <div class="param-description">List of objects with details of priorities that can be set for bugs on JIRA.</div>
+                <div class="param-required">Type: ArrayJson</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">users</div>
+              <div class="param-content">
+                <div class="param-description">List of objects with details of Users on the JIRA projects.</div>
+                <div class="param-required">Type: ArrayJson</div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="param-title">versions</div>
+              <div class="param-content">
+                <div class="param-description">This key inside a project object contains the details of different versions of a JIRA Project.</div>
+                <div class="param-required">Type: ArrayJson</div>
               </div>
             </div>
             
