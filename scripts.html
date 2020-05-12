@@ -211,44 +211,16 @@
     
     
     
-    <div class="api-link">
+    <div class="api-link active">
         <a href="scripts.html">Scripting Guidelines</a>
     </div>
     
     
     
-    <div class="api-link active">
+    
+    <div class="api-link">
         <a href="1.html">Authentication</a>
     </div>
-    
-    <div class="sub-menu-container">
-        
-            <div class="sub-menu-item ">
-                
-                    <a href="23.html">Get Verification Code</a>
-                
-            </div>
-        
-            <div class="sub-menu-item ">
-                
-                    <a href="3.html">Verify Email</a>
-                
-            </div>
-        
-            <div class="sub-menu-item ">
-                
-                    <a href="1.html">Register</a>
-                
-            </div>
-        
-            <div class="sub-menu-item ">
-                
-                    <a href="2.html">Login</a>
-                
-            </div>
-        
-    </div>
-    
     
     
     
@@ -285,96 +257,66 @@
 </div>
         <div class="content">
           <div class="content-inner">
-            <h1>Verify Email</h1>
-            <p class="url">
-              http://aquamark-dev.mozark.ai:8080/functional/user/signup/verify   <span class="method">POST</span>
-            </p>
-
-            <p class="description">
-            This API is used to validate a newly registered User's email. A verification code is sent to the user's email which needs to be passed in this API. Only after this verification is complete the user can continue to register.
-            </p>
-            <div class="divider"></div>
-
-            <h2 class="sub-header">Request Syntax</h2>
-            <pre>
-              <code class="json">{
-  &quot;json&quot;: {
-    &quot;request&quot;: {
-      &quot;data&quot;: {
-        &quot;email&quot;: &quot;String&quot;,
-        &quot;verificationCode&quot;: &quot;String&quot;
-      }
-    }
-  }
-}</code>
-            </pre>
-            <div class="divider"></div>
-
-            <h2 class="sub-header">Request Parameters</h2>
-            <p>The request accepts the following data in JSON format.</p>
-            
-            <div>
-              <div class="param-title">email</div>
-              <div class="param-content">
-                <div class="param-description">User&#x27;s email or mobile phone</div>
-                <div class="param-required">Type: String</div>
-                <div class="param-required">Required: Yes</div>
+            <h1>Scripting Guidelines</h1>
+            <div class="button-group">
+              <button class="button-framework active" onclick="select_top(0)">Appium</button>
+              <button class="button-framework" onclick="select_top(1)">Espresso</button>
+              <button class="button-framework" onclick="select_top(2)">XCuite</button>
+              <button class="button-framework" onclick="select_top(3)">Calabash</button>
+            </div>
+            <div id="appium">
+              <div id="script_link">
+                Language: 
+                <select id="language_selecter" onchange="selectLanguage()">
+                  <option value="java">Java</option>
+                  <option value="node">Node</option>
+                  <option value="python">Python</option>
+                </select>
+                <div id="java">
+                  The scripting guidelines for the Appium (Java) can be downloaded <a href="docs/appium_java.pdf">here</a>
+                </div>
+                <div id="others">Coming Soon.</div>
               </div>
             </div>
-            
-            <div>
-              <div class="param-title">verificationCode</div>
-              <div class="param-content">
-                <div class="param-description">The verification code sent to the user&#x27;s email</div>
-                <div class="param-required">Type: String</div>
-                <div class="param-required">Required: Yes</div>
-              </div>
+            <div id="coming_soon">
+                Coming Soon.
             </div>
-            
-
-            <div class="divider"></div>
-            <h2 class="sub-header">Request Headers</h2>
-            <p>The following headers must be sent with the request.</p>
-            <div>
-              <div class="param-title">content-type</div>
-              <div class="param-content">
-                <div class="param-description">application/json</div>
-                <div class="param-required">Required: Yes</div>
-              </div>
-            </div>
-            <div class="divider"></div>
-            <h2 class="sub-header">Response Syntax</h2>
-            <pre>
-              <code class="json">{
-  &quot;json&quot;: {
-    &quot;response&quot;: {
-      &quot;session&quot;: {
-        &quot;sessionId&quot;: &quot;CDYAADAAAAAA&quot;
-      },
-      &quot;statusCode&quot;: &quot;0&quot;,
-      &quot;statusMessage&quot;: &quot;Success&quot;
-    }
-  }
-}</code>
-            </pre>
-            
-            <div class="divider"></div>
-            <h2 class="sub-header">Response Elements</h2>
-            
-            <div>
-              <div class="param-title">sessionId</div>
-              <div class="param-content">
-                <div class="param-description">This is a temporary session ID generated for the verification process</div>
-                <div class="param-required">Type: String</div>
-              </div>
-            </div>
-            
-            
             <div class="footer"></div>
           </div>
+          <script>
+            function select_top(i){
+              var buttons = document.getElementsByClassName('button-framework');
+              buttons[0].classList.remove('active');
+              buttons[1].classList.remove('active');
+              buttons[2].classList.remove('active');
+              buttons[3].classList.remove('active');
+              buttons[i].classList.add('active');
+              if(i == 0){
+                document.getElementById('appium').style.display = 'block';
+                document.getElementById('coming_soon').style.display = 'none';
+              } else {
+                document.getElementById('appium').style.display = 'none';
+                document.getElementById('coming_soon').style.display = 'block';
+              }
+            }
+
+            function selectLanguage(){
+              var select = document.getElementById('language_selecter');
+              if(select.value == 'java'){
+                document.getElementById('java').style.display = 'block';
+                document.getElementById('others').style.display = 'none';
+              }else{
+                document.getElementById('java').style.display = 'none';
+                document.getElementById('others').style.display = 'block';
+              }
+            }
+
+            select_top(0);
+            selectLanguage();
+
+          </script>
         </div>
       </div>
     </div>
-    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
